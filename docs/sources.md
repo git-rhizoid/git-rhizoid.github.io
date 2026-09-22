@@ -5,46 +5,66 @@
 <a id="go-modules"></a>
 ### Go Modules Reference
 
-**Url:** https://go.dev/ref/mod
+Url
+: https://go.dev/ref/mod
 
-**Author:** The Go Authors
+Author
+: The Go Authors
 
-**Cited by:** [Rhizoid-cutting (rhizcut)](concepts.md#rhizoid-cutting)
+Cited by
+: [Rhizoid-cutting (rhizcut)](concepts.md#rhizoid-cutting)
+
 
 <a id="git-vendor-joshwolfe"></a>
 ### git-vendor (thejoshwolfe)
 
-**Url:** https://github.com/thejoshwolfe/git-vendor
+Url
+: https://github.com/thejoshwolfe/git-vendor
 
-**Author:** Josh Wolfe
+Author
+: Josh Wolfe
 
-**Cited by:** [Rhizoid-cutting (rhizcut)](concepts.md#rhizoid-cutting)
+Cited by
+: [Rhizoid-cutting (rhizcut)](concepts.md#rhizoid-cutting)
+
 
 <a id="wei-pull"></a>
 ### wei/pull
 
-**Url:** https://github.com/wei/pull
+Url
+: https://github.com/wei/pull
 
-**Author:** Wei He
+Author
+: Wei He
 
-**Cited by:** [Additive-only file structure](concepts.md#additive-file-structure)
+Cited by
+: [Additive-only file structure](concepts.md#additive-file-structure)
+
 
 <a id="github-merge-upstream"></a>
 ### Sync a fork - REST API
 
-**Url:** https://docs.github.com/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository
+Url
+: https://docs.github.com/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository
 
-**Author:** GitHub
+Author
+: GitHub
 
-**Cited by:** [Additive-only file structure](concepts.md#additive-file-structure)
+Cited by
+: [Additive-only file structure](concepts.md#additive-file-structure)
+
 
 <a id="kusari-to-fork"></a>
 ### To Fork or Not to Fork
 
-**Url:** https://www.kusari.dev/blog/to-fork-or-not-to-fork
+Url
+: https://www.kusari.dev/blog/to-fork-or-not-to-fork
 
-**Author:** Kusari
+Author
+: Kusari
 
-**Year:** 2024
+Year
+: 2024
 
-**Cited by:** [Clean patch back upstream](concepts.md#clean-patch-back)
+Cited by
+: [Clean patch back upstream](concepts.md#clean-patch-back)
