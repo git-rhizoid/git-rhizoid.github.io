@@ -25,7 +25,7 @@
 <a id="verify-pages-root"></a>
 ### Verify Pages serves at the org root
 
-**Status:** open
+**Status:** done
 
 **Note:** git-rhizoid.github.io should serve at https://git-rhizoid.github.io/ once Pages is enabled here, since the repo name matches the org.github.io convention - not yet confirmed live.
 
