@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.0 (2026-09-22)
+
+
+### Features
+
+* **data:** seed the real Rhizoid design log ([53edb26](https://github.com/git-rhizoid/git-rhizoid.github.io/commit/53edb267198c7b87ac8774d6e2a59ba16e13411b))
+
+
+### Bug Fixes
+
+* **data:** actually add the dc.py backlog item the previous commit claimed ([9f1d9d1](https://github.com/git-rhizoid/git-rhizoid.github.io/commit/9f1d9d1af4d8f3a35ab587e193533460942c75e4))
+
 ## [1.2.0](https://github.com/creation-guidelines/text-as-data-template/compare/v1.1.2...v1.2.0) (2026-09-22)
 
 
