@@ -9,3 +9,6 @@
 {"from_id":"manifest-file-format","to_id":"module-metadata-file","relation":"pairs-with","note":"the top-level manifest and each fork's own metadata file are both TOML, for the same reasons"}
 {"from_id":"distributed-state-no-lockfile","to_id":"module-metadata-file","relation":"concerns","note":"this is what makes a central lockfile unnecessary"}
 {"from_id":"distributed-state-no-lockfile","to_id":"drift-detection","relation":"pairs-with","note":"status/refresh read the distributed state directly instead of a lockfile"}
+{"from_id":"rhizoid-crate-shape","to_id":"argenv-is-flags-and-env-only","relation":"concerns","note":"the cli crate is where argenvs actual scope applies"}
+{"from_id":"rhizoid-crate-shape","to_id":"module-metadata-file","relation":"pairs-with","note":"rhizoid-core owns both the top-level manifest type and the per-fork metadata type"}
+{"from_id":"rhizoid-crate-shape","to_id":"manifest-file-format","relation":"pairs-with","note":"rhizoid-core is where the TOML/schema decision actually gets implemented"}

@@ -8,3 +8,4 @@
 {"id":"toml-spec","title":"TOML: Tom's Obvious, Minimal Language","url":"https://toml.io/en/","author":"Tom Preston-Werner et al.","year":2021}
 {"id":"yaml-document-from-hell","title":"The YAML Document From Hell","url":"https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell","author":"Ruud van Asseldonk","year":2023}
 {"id":"wrangler-toml-to-jsonc","title":"The future of Wrangler configuration","url":"https://github.com/cloudflare/workers-sdk/discussions/1951","author":"Cloudflare workers-sdk","year":null}
+{"id":"argenv-repo","title":"argenv","url":"https://github.com/argenv-opencommons/argenv","author":"argenv-opencommons","year":null}

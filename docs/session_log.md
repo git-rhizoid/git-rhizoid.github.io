@@ -178,3 +178,21 @@ Considered
 
 Rejected
 : JSONC is not a real standard (every parser's comment-stripping behavior differs slightly) and lacks TOML's native date/array-of-tables types; the footgun that pushed Wrangler away from TOML applies less here given how the manifest is actually meant to be edited.
+
+---
+
+
+<a id="design-boundary-layer"></a>
+### Read argenv's real source before designing the boundary layer around it
+
+Entry date
+: 2026-09-22
+
+Done
+: Fetched argenv's actual API (Input/Arg/Env, the resolve/lint functions) and argenv-cli's own main.rs rather than assuming a clap-like shape from its one-line description. Found it declares flags and environment variables only - no subcommands, no positional arguments (see [argenv-is-flags-and-env-only](concepts.md#argenv-is-flags-and-env-only)). Settled the boundary layer's shape on that basis: a two-crate workspace, rhizoid-core and rhizoid-cli (see [rhizoid-crate-shape](concepts.md#rhizoid-crate-shape)), a hand-written verb dispatcher matching argenv-cli's own reference pattern, argenv Models for each command's named flags (with env fallback, so CI/scripts can drive Rhizoid without touching argv at all), and manifest infrastructure (Manifest/Module types, TOML read/write, a schemars-derived schema, a schema subcommand mirroring argenv-cli's own). The real git/gh operations behind GitPort/GitHubPort are explicitly out of scope for this pass - each command resolves and validates its inputs and loads the manifest, and either does the one thing that needs no GitHub (init) or reports plainly that the rest is not implemented yet.
+
+Considered
+: Assuming argenv worked like a typical CLI-parsing crate (subcommands, positional arguments) from its description alone.
+
+Rejected
+: Would have produced a design that does not compile against the real crate. Reading the actual source first cost a handful of API calls and avoided building the wrong thing.

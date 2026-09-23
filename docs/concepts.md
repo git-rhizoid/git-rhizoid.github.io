@@ -145,6 +145,7 @@ Relations
 : ← concerns: [The v1 command surface: init, add, import, update, status, refresh, remove](concepts.md#rhizoid-command-surface) — status/refresh/update all read and write this file
 : ← pairs-with: [The manifest is TOML, with the footgun that argues against it named up front](concepts.md#manifest-file-format) — the top-level manifest and each fork's own metadata file are both TOML, for the same reasons
 : ← concerns: [No central lockfile - state is distributed into each fork](concepts.md#distributed-state-no-lockfile) — this is what makes a central lockfile unnecessary
+: ← pairs-with: [Two crates: rhizoid-core and rhizoid-cli](concepts.md#rhizoid-crate-shape) — rhizoid-core owns both the top-level manifest type and the per-fork metadata type
 
 
 <a id="manifest-file-format"></a>
@@ -158,6 +159,7 @@ Tags
 
 Relations
 : → pairs-with: [Each fork carries its own .rhizoid/module.toml](concepts.md#module-metadata-file) — the top-level manifest and each fork's own metadata file are both TOML, for the same reasons
+: ← pairs-with: [Two crates: rhizoid-core and rhizoid-cli](concepts.md#rhizoid-crate-shape) — rhizoid-core is where the TOML/schema decision actually gets implemented
 
 Sources
 : [TOML: Tom's Obvious, Minimal Language](https://toml.io/en/), [The YAML Document From Hell](https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell), [The future of Wrangler configuration](https://github.com/cloudflare/workers-sdk/discussions/1951)
@@ -185,3 +187,34 @@ Statement
 
 Tags
 : design
+
+
+<a id="argenv-is-flags-and-env-only"></a>
+### argenv declares flags and env vars - not subcommands or positionals
+
+Statement
+: Read argenv's own source and README before designing against it: it is explicitly "a declared, typed contract for a program's invocation surface - argv and envp", and every Input it declares binds to a --flag/env-var pair, never a bare positional value. Confirmed by reading argenv-cli's own main.rs (the author's own reference CLI): subcommand dispatch is a plain match on args.first(), not anything argenv provides. Rhizoid's CLI follows the same shape: a thin hand-written dispatcher picks the verb and reads each command's one primary positional (a repo spec, a URL, a module name) directly; argenv declares only the named flags for each verb.
+
+Tags
+: design
+
+Relations
+: ← concerns: [Two crates: rhizoid-core and rhizoid-cli](concepts.md#rhizoid-crate-shape) — the cli crate is where argenvs actual scope applies
+
+Sources
+: [argenv](https://github.com/argenv-opencommons/argenv)
+
+
+<a id="rhizoid-crate-shape"></a>
+### Two crates: rhizoid-core and rhizoid-cli
+
+Statement
+: Mirrors argenv's own workspace shape (crates/argenv + crates/argenv-cli). rhizoid-core holds the Manifest and Module types, their JSON Schema (via schemars, the same crate argenv itself already uses for its own contract feature), and the GitPort/GitHubPort traits the real fork/sync logic will implement later. rhizoid-cli holds argv dispatch and the per-command argenv Models. Splitting now, before there is much code, avoids a disruptive later refactor once the planned TUI needs to depend on the same core logic without the CLI.
+
+Tags
+: design
+
+Relations
+: → concerns: [argenv declares flags and env vars - not subcommands or positionals](concepts.md#argenv-is-flags-and-env-only) — the cli crate is where argenvs actual scope applies
+: → pairs-with: [Each fork carries its own .rhizoid/module.toml](concepts.md#module-metadata-file) — rhizoid-core owns both the top-level manifest type and the per-fork metadata type
+: → pairs-with: [The manifest is TOML, with the footgun that argues against it named up front](concepts.md#manifest-file-format) — rhizoid-core is where the TOML/schema decision actually gets implemented

@@ -139,3 +139,16 @@ Author
 
 Cited by
 : [The manifest is TOML, with the footgun that argues against it named up front](concepts.md#manifest-file-format)
+
+
+<a id="argenv-repo"></a>
+### argenv
+
+Url
+: https://github.com/argenv-opencommons/argenv
+
+Author
+: argenv-opencommons
+
+Cited by
+: [argenv declares flags and env vars - not subcommands or positionals](concepts.md#argenv-is-flags-and-env-only)
