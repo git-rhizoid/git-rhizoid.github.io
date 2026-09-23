@@ -196,3 +196,27 @@ Considered
 
 Rejected
 : Would have produced a design that does not compile against the real crate. Reading the actual source first cost a handful of API calls and avoided building the wrong thing.
+
+---
+
+
+<a id="implement-boundary-layer"></a>
+### Implemented the boundary layer: manifest infra, 7 argenv-typed commands, 39 tests
+
+Entry date
+: 2026-09-22
+
+Done
+: Two-crate workspace in git-rhizoid/rhizoid (rhizoid-core, rhizoid-cli - see [rhizoid-crate-shape](concepts.md#rhizoid-crate-shape)). init and remove are fully working, needing no GitHub; the other five (add, import, update, status, refresh) resolve and validate their inputs against a real argenv Model, then report plainly that they are not implemented yet rather than pretending to work. Verified locally and on real GitHub Actions, including the MSRV job.
+
+---
+
+
+<a id="boundary-layer-real-bugs"></a>
+### Three real bugs found by building and running this, not by review
+
+Entry date
+: 2026-09-22
+
+Done
+: Guessed the resolved-invocation type was called Resolved from the README's variable naming; it is actually Resolution. Model::problems() was dead code from the plain binary's perspective even with a passing test calling it, since #[cfg(test)] code is not compiled into that target at all - fixed by having main() call it as a genuine startup self-check on each command's own contract, which is itself consistent with [drift-detection](concepts.md#drift-detection) (verify, do not just trust). A stable-resolved indexmap version needed edition2024, which the declared MSRV (1.75.0) cannot parse; pinned it explicitly and, in fixing this, found Cargo.lock was gitignored (inherited from the rustnix template's generic default) - fixed to be tracked, since a binary crate needs its lockfile committed for an MSRV pin to survive a fresh clone or CI run at all.

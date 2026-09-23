@@ -19,10 +19,10 @@ Opened
 ### Implement the actual rhizoid CLI
 
 Status
-: open
+: in-progress
 
 Note
-: Command surface and manifest shape are now designed (see session_log: design-v1-command-surface, and concepts: rhizoid-command-surface, module-metadata-file). Nothing is implemented in git-rhizoid/rhizoid yet - src/main.rs is still a placeholder.
+: Boundary layer implemented: manifest infra, 7 argenv-typed commands, 39 tests, real CI including MSRV all green (see implement-boundary-layer). init and remove fully work; add/import/update/status/refresh are typed and tested but stubbed, waiting on the GitHubPort adapter.
 
 Opened
 : 2026-09-22
