@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/creation-guidelines/tad-engine.git
 	branch = dist
-	commit = 16342c5ccaf20ccfaf2d4a25422c437c0ee44062
-	parent = 5766cf6c3bb59e7a3888e04042a1c3751ec0a63f
+	commit = c88fc835f3c0f435257ac7df6653934442e735fa
+	parent = 03c292d588c33159f2fa69227419929434503f23
 	method = merge
 	cmdver = 0.4.9
