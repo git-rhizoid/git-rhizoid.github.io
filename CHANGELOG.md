@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.0](https://github.com/git-rhizoid/git-rhizoid.github.io/compare/v1.0.0...v1.1.0) (2026-09-23)
+
+
+### Features
+
+* **data:** decide the manifest format (TOML) and auth (gh, for now) ([002e22b](https://github.com/git-rhizoid/git-rhizoid.github.io/commit/002e22b116b17ccf9d02a604ef172703eef44010))
+* **data:** design the boundary layer, having read argenv's real API ([ea6d4ae](https://github.com/git-rhizoid/git-rhizoid.github.io/commit/ea6d4ae245cba060e1e85a1b605596818471a2ad))
+* **data:** log the boundary layer implementation and its real bugs ([ed86798](https://github.com/git-rhizoid/git-rhizoid.github.io/commit/ed867984b5730fdf772059f54b07a0bc1b9e5b1f))
+* **data:** plan the v1 command surface (add/import/update/status/refresh) ([74a6b27](https://github.com/git-rhizoid/git-rhizoid.github.io/commit/74a6b270346bc8525fbcbf86d3a6f92710b86892))
+* **docs:** adopt the RFC-like minimal Pages style ([03c292d](https://github.com/git-rhizoid/git-rhizoid.github.io/commit/03c292d588c33159f2fa69227419929434503f23))
+
 ## 1.0.0 (2026-09-22)
 
 
