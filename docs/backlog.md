@@ -22,7 +22,7 @@ Status
 : open
 
 Note
-: git-rhizoid/rhizoid currently has no functionality - src/main.rs is a placeholder. v0.1 scope: add <owner/repo>, update <module>, status.
+: Command surface and manifest shape are now designed (see session_log: design-v1-command-surface, and concepts: rhizoid-command-surface, module-metadata-file). Nothing is implemented in git-rhizoid/rhizoid yet - src/main.rs is still a placeholder.
 
 Opened
 : 2026-09-22
@@ -62,6 +62,19 @@ Status
 
 Note
 : check() validates the on-disk state before new SQL runs, so wiping every row in a table (to clear example content, say) leaves no way back through dc.py sql alone - the empty state always fails column-has-no-data ahead of the very INSERT that would fix it. Worked around once by seeding directly via DuckDB; the real fix is probably running check() after the SQL too, or making it tolerant of a table that is empty on both sides.
+
+Opened
+: 2026-09-22
+
+
+<a id="tui-for-rhizoid"></a>
+### Add a TUI for Rhizoid
+
+Status
+: open
+
+Note
+: Explicitly a later phase, after the CLI (init/add/import/update/status/refresh/remove) is working - not designed at all yet.
 
 Opened
 : 2026-09-22

@@ -3,3 +3,5 @@
 {"id":"wei-pull","title":"wei/pull","url":"https://github.com/wei/pull","author":"Wei He","year":null}
 {"id":"github-merge-upstream","title":"Sync a fork - REST API","url":"https://docs.github.com/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository","author":"GitHub","year":null}
 {"id":"kusari-to-fork","title":"To Fork or Not to Fork","url":"https://www.kusari.dev/blog/to-fork-or-not-to-fork","author":"Kusari","year":2024}
+{"id":"terraform-drift-import","title":"Manage Resource Drift","url":"https://developer.hashicorp.com/terraform/tutorials/state/resource-drift","author":"HashiCorp","year":null}
+{"id":"west-manifest","title":"West Manifests","url":"https://docs.zephyrproject.org/latest/develop/west/manifest.html","author":"Zephyr Project","year":null}

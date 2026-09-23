@@ -3,3 +3,6 @@
 {"concept_id":"additive-file-structure","source_id":"wei-pull"}
 {"concept_id":"additive-file-structure","source_id":"github-merge-upstream"}
 {"concept_id":"clean-patch-back","source_id":"kusari-to-fork"}
+{"concept_id":"fork-destination-manifest","source_id":"west-manifest"}
+{"concept_id":"drift-detection","source_id":"terraform-drift-import"}
+{"concept_id":"adopt-vs-create","source_id":"terraform-drift-import"}

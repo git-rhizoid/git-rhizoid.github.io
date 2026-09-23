@@ -1,3 +1,8 @@
 {"from_id":"additive-file-structure","to_id":"rhizoid-cutting","relation":"concerns","note":"the property that makes a rhizoid-cutting update conflict-free"}
 {"from_id":"tracking-vs-patch-branch","to_id":"additive-file-structure","relation":"pairs-with","note":"together they define what \"conflict-free\" actually means here"}
 {"from_id":"clean-patch-back","to_id":"tracking-vs-patch-branch","relation":"concerns","note":"a clean patch is only possible because the tracking branch stays pristine"}
+{"from_id":"rhizoid-command-surface","to_id":"module-metadata-file","relation":"concerns","note":"status/refresh/update all read and write this file"}
+{"from_id":"rhizoid-command-surface","to_id":"fork-destination-manifest","relation":"concerns","note":"add reads the destination org from here"}
+{"from_id":"rhizoid-command-surface","to_id":"adopt-vs-create","relation":"concerns","note":"add and import are two of its seven verbs"}
+{"from_id":"drift-detection","to_id":"additive-file-structure","relation":"concerns","note":"drift detection is what notices when the additive structure itself has been touched or is missing"}
+{"from_id":"adopt-vs-create","to_id":"rhizoid-cutting","relation":"concerns","note":"both add and import produce a rhizoid-cutting; they differ in whether a new fork is created"}
