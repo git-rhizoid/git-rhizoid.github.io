@@ -5,3 +5,6 @@
 {"id":"kusari-to-fork","title":"To Fork or Not to Fork","url":"https://www.kusari.dev/blog/to-fork-or-not-to-fork","author":"Kusari","year":2024}
 {"id":"terraform-drift-import","title":"Manage Resource Drift","url":"https://developer.hashicorp.com/terraform/tutorials/state/resource-drift","author":"HashiCorp","year":null}
 {"id":"west-manifest","title":"West Manifests","url":"https://docs.zephyrproject.org/latest/develop/west/manifest.html","author":"Zephyr Project","year":null}
+{"id":"toml-spec","title":"TOML: Tom's Obvious, Minimal Language","url":"https://toml.io/en/","author":"Tom Preston-Werner et al.","year":2021}
+{"id":"yaml-document-from-hell","title":"The YAML Document From Hell","url":"https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell","author":"Ruud van Asseldonk","year":2023}
+{"id":"wrangler-toml-to-jsonc","title":"The future of Wrangler configuration","url":"https://github.com/cloudflare/workers-sdk/discussions/1951","author":"Cloudflare workers-sdk","year":null}

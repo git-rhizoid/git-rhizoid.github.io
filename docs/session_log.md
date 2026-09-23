@@ -160,3 +160,21 @@ Entry date
 
 Done
 : This plan covers the fork-management side only: how Rhizoid forks, tracks, and syncs dependencies into a configured org. How a third repo (something that is not Rhizoid itself) declares "I depend on this org's fork of X at version Y" and pulls it in remains a separate, undesigned problem, kept apart on purpose since the first reflection on this project.
+
+---
+
+
+<a id="decide-manifest-format-and-auth"></a>
+### Decided the manifest format (TOML) and that auth goes through gh for now
+
+Entry date
+: 2026-09-22
+
+Done
+: Researched the JSON/YAML/TOML tradeoffs specifically for a hand-editable, cross-language project manifest rather than a deeply nested orchestration config (see [manifest-file-format](concepts.md#manifest-file-format)): TOML's comment support and lack of YAML's implicit-typing and indentation footguns fit a manifest people edit by hand, and its array-of-tables syntax matches "a list of modules" directly. Found and weighed the honest counter-case before committing: Cloudflare's Wrangler moved away from TOML-only specifically over its array-of-tables footgun in a heavily hand-edited config - judged as a smaller risk here because the manifest is meant to be edited through add/import/remove rather than freehand, and per-module detail lives in each fork's own .rhizoid/module.toml rather than in one large top-level file (see [distributed-state-no-lockfile](concepts.md#distributed-state-no-lockfile)). Also decided, separately and far more simply: auth goes through an already-authenticated gh for now (see [auth-via-gh](concepts.md#auth-via-gh)), rather than Rhizoid managing its own credentials.
+
+Considered
+: JSON/JSONC for the manifest, matching Wrangler's own current recommendation.
+
+Rejected
+: JSONC is not a real standard (every parser's comment-stripping behavior differs slightly) and lacks TOML's native date/array-of-tables types; the footgun that pushed Wrangler away from TOML applies less here given how the manifest is actually meant to be edited.

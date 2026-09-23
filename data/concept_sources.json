@@ -6,3 +6,6 @@
 {"concept_id":"fork-destination-manifest","source_id":"west-manifest"}
 {"concept_id":"drift-detection","source_id":"terraform-drift-import"}
 {"concept_id":"adopt-vs-create","source_id":"terraform-drift-import"}
+{"concept_id":"manifest-file-format","source_id":"toml-spec"}
+{"concept_id":"manifest-file-format","source_id":"yaml-document-from-hell"}
+{"concept_id":"manifest-file-format","source_id":"wrangler-toml-to-jsonc"}

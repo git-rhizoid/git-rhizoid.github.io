@@ -6,3 +6,6 @@
 {"from_id":"rhizoid-command-surface","to_id":"adopt-vs-create","relation":"concerns","note":"add and import are two of its seven verbs"}
 {"from_id":"drift-detection","to_id":"additive-file-structure","relation":"concerns","note":"drift detection is what notices when the additive structure itself has been touched or is missing"}
 {"from_id":"adopt-vs-create","to_id":"rhizoid-cutting","relation":"concerns","note":"both add and import produce a rhizoid-cutting; they differ in whether a new fork is created"}
+{"from_id":"manifest-file-format","to_id":"module-metadata-file","relation":"pairs-with","note":"the top-level manifest and each fork's own metadata file are both TOML, for the same reasons"}
+{"from_id":"distributed-state-no-lockfile","to_id":"module-metadata-file","relation":"concerns","note":"this is what makes a central lockfile unnecessary"}
+{"from_id":"distributed-state-no-lockfile","to_id":"drift-detection","relation":"pairs-with","note":"status/refresh read the distributed state directly instead of a lockfile"}

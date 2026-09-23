@@ -78,6 +78,7 @@ Tags
 
 Relations
 : → concerns: [Additive-only file structure](concepts.md#additive-file-structure) — drift detection is what notices when the additive structure itself has been touched or is missing
+: ← pairs-with: [No central lockfile - state is distributed into each fork](concepts.md#distributed-state-no-lockfile) — status/refresh read the distributed state directly instead of a lockfile
 
 Sources
 : [Manage Resource Drift](https://developer.hashicorp.com/terraform/tutorials/state/resource-drift)
@@ -142,3 +143,45 @@ Tags
 
 Relations
 : ← concerns: [The v1 command surface: init, add, import, update, status, refresh, remove](concepts.md#rhizoid-command-surface) — status/refresh/update all read and write this file
+: ← pairs-with: [The manifest is TOML, with the footgun that argues against it named up front](concepts.md#manifest-file-format) — the top-level manifest and each fork's own metadata file are both TOML, for the same reasons
+: ← concerns: [No central lockfile - state is distributed into each fork](concepts.md#distributed-state-no-lockfile) — this is what makes a central lockfile unnecessary
+
+
+<a id="manifest-file-format"></a>
+### The manifest is TOML, with the footgun that argues against it named up front
+
+Statement
+: TOML: native comments (unlike JSON), no implicit type coercion or indentation sensitivity (unlike YAML - see [the YAML document from hell](sources.md#yaml-document-from-hell)), and its array-of-tables syntax is a direct fit for "a list of modules, each a flat record". Cross-ecosystem adoption for exactly this kind of file (a hand-editable project/tool manifest, not a deeply-nested orchestration config) is real and independent of any one language: Cargo.toml, pyproject.toml, Hugo, Netlify. The honest counter-case: Cloudflare's Wrangler shipped TOML-only for years, then added JSONC and now recommends it for new projects, naming TOML's array-of-tables syntax as a real footgun in practice - a misplaced or missing [[table]] header silently puts a value in the wrong entry (see [the future of Wrangler configuration](sources.md#wrangler-toml-to-jsonc)). That risk is highest when a file is mostly hand-typed from scratch, which is not the common case here: the manifest is meant to be edited through add/import/remove, not freehand, and each module's own detailed state lives in its own .rhizoid/module.toml rather than piling many [[module]] entries into one large hand-edited file - closer to Cargo.toml's [dependencies] table (mostly tool-written) than to a large hand-maintained Wrangler config.
+
+Tags
+: design
+
+Relations
+: → pairs-with: [Each fork carries its own .rhizoid/module.toml](concepts.md#module-metadata-file) — the top-level manifest and each fork's own metadata file are both TOML, for the same reasons
+
+Sources
+: [TOML: Tom's Obvious, Minimal Language](https://toml.io/en/), [The YAML Document From Hell](https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell), [The future of Wrangler configuration](https://github.com/cloudflare/workers-sdk/discussions/1951)
+
+
+<a id="distributed-state-no-lockfile"></a>
+### No central lockfile - state is distributed into each fork
+
+Statement
+: Cargo, npm, Poetry and Nix all pair a human-edited manifest with a separate, machine-written lockfile recording exact resolved state. Rhizoid does not need a top-level lockfile: each managed fork is already a real git repository with its own history, and its own .rhizoid/module.toml already carries that module's exact recorded state (see [module-metadata-file](concepts.md#module-metadata-file)). A central lockfile would just be a second, independently-driftable copy of information git already holds per-repo.
+
+Tags
+: design
+
+Relations
+: → concerns: [Each fork carries its own .rhizoid/module.toml](concepts.md#module-metadata-file) — this is what makes a central lockfile unnecessary
+: → pairs-with: [Status detects drift, not just reports the manifest](concepts.md#drift-detection) — status/refresh read the distributed state directly instead of a lockfile
+
+
+<a id="auth-via-gh"></a>
+### Auth: shell out to gh, for now
+
+Statement
+: Rhizoid calls the GitHub CLI (gh) for anything needing authentication - forking, merge-upstream, reading repo state - rather than managing its own token or OAuth flow. Whoever already has gh authenticated can use Rhizoid immediately; the tool has no credentials of its own to store, rotate, or leak. Revisit if a use case needs something gh cannot do (a non-GitHub git host, for one).
+
+Tags
+: design

@@ -94,3 +94,48 @@ Author
 
 Cited by
 : [Fork destination is a manifest setting, not hardcoded](concepts.md#fork-destination-manifest)
+
+
+<a id="toml-spec"></a>
+### TOML: Tom's Obvious, Minimal Language
+
+Url
+: https://toml.io/en/
+
+Author
+: Tom Preston-Werner et al.
+
+Year
+: 2021
+
+Cited by
+: [The manifest is TOML, with the footgun that argues against it named up front](concepts.md#manifest-file-format)
+
+
+<a id="yaml-document-from-hell"></a>
+### The YAML Document From Hell
+
+Url
+: https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell
+
+Author
+: Ruud van Asseldonk
+
+Year
+: 2023
+
+Cited by
+: [The manifest is TOML, with the footgun that argues against it named up front](concepts.md#manifest-file-format)
+
+
+<a id="wrangler-toml-to-jsonc"></a>
+### The future of Wrangler configuration
+
+Url
+: https://github.com/cloudflare/workers-sdk/discussions/1951
+
+Author
+: Cloudflare workers-sdk
+
+Cited by
+: [The manifest is TOML, with the footgun that argues against it named up front](concepts.md#manifest-file-format)
