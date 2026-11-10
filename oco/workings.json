@@ -1,0 +1,2 @@
+{"id":"w-01","what":"The design log","kind":"practice","serves":"rhizoid-consumption","how":"Each question is settled as a decision, with what was rejected, before any code depends on it.","why":"A dependency tool's mistakes are expensive to undo once others rely on them.","evidence":"","uses":""}
+{"id":"w-02","what":"The declarations layer and its tests","kind":"check","serves":"rhizoid-cli","how":"The part that reads a cutting's own note is built and tested first.","why":"Every command trusts what it reads.","evidence":"","uses":""}
