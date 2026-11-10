@@ -238,3 +238,21 @@ Considered
 
 Rejected
 : That: the path says what the project's own records show.
+
+---
+
+
+<a id="its-idea-for-anyone"></a>
+### Its idea, told for anyone
+
+Entry date
+: 2026-11-10
+
+Done
+: The idea of Rhizoid written as an ordered piece of writing in its own data - borrowed versus owned, a cutting rather than a copy, nothing hidden, what it does not fix, where it stands - for a reader who knows nothing of it.
+
+Considered
+: Terse cards of concepts.
+
+Rejected
+: Those as the idea: they name the parts for an insider.
