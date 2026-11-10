@@ -256,3 +256,21 @@ Considered
 
 Rejected
 : Those as the idea: they name the parts for an insider.
+
+---
+
+
+<a id="its-workings"></a>
+### Its workings, told
+
+Entry date
+: 2026-11-10
+
+Done
+: What delivers and proves the steps reached so far - the design log, the declarations layer and its tests - written under the steps they serve. The TUI and carrying ocoeco are left with nothing under them.
+
+Considered
+: Filling every step.
+
+Rejected
+: That: a step nothing serves should be seen.
