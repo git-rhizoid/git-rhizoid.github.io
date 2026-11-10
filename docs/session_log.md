@@ -220,3 +220,21 @@ Entry date
 
 Done
 : Guessed the resolved-invocation type was called Resolved from the README's variable naming; it is actually Resolution. Model::problems() was dead code from the plain binary's perspective even with a passing test calling it, since #[cfg(test)] code is not compiled into that target at all - fixed by having main() call it as a genuine startup self-check on each command's own contract, which is itself consistent with [drift-detection](concepts.md#drift-detection) (verify, do not just trust). A stable-resolved indexmap version needed edition2024, which the declared MSRV (1.75.0) cannot parse; pinned it explicitly and, in fixing this, found Cargo.lock was gitignored (inherited from the rustnix template's generic default) - fixed to be tracked, since a binary crate needs its lockfile committed for an MSRV pin to survive a fresh clone or CI run at all.
+
+---
+
+
+<a id="joins-the-observatory"></a>
+### Rhizoid joins the Open Commons Observatory
+
+Entry date
+: 2026-11-10
+
+Done
+: Joined with ocoeco init: the mark, the gatherer's caller; the design log's own tables (concepts, backlog, session log) shared as they are, and a path written only from the backlog - the command line, the consumption side, a TUI - whose last stop reads ocoeco's own backlog: ocoeco travelling as a rhizcut.
+
+Considered
+: Writing milestones the backlog does not hold.
+
+Rejected
+: That: the path says what the project's own records show.

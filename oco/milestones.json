@@ -1,0 +1,4 @@
+{"id":"rhizoid-carries-ocoeco","subject":"rhizoid","ord":4,"title":"ocoeco travels as a rhizcut","horizon":"ongoing","readiness":9,"criteria":"backlog:rhizcut","why":"Its first passenger: the observatory's ecosystem, in every repository."}
+{"id":"rhizoid-cli","subject":"rhizoid","ord":1,"title":"The command line, implemented","horizon":"working","readiness":5,"criteria":"backlog:implement-cli","why":"init, add, import, update, status, refresh, remove - on the boundary layer already built."}
+{"id":"rhizoid-consumption","subject":"rhizoid","ord":2,"title":"The consumption side, designed","horizon":"working","readiness":6,"criteria":"backlog:design-consumption-side","why":"How a project declares and uses its rhizcuts."}
+{"id":"rhizoid-tui","subject":"rhizoid","ord":3,"title":"A TUI","horizon":"perfection","readiness":8,"criteria":"backlog:tui-for-rhizoid","why":"Seeing and tending one's cuttings."}
