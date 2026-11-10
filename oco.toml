@@ -1,0 +1,18 @@
+# This repository's mark: how it fits the Open Commons Observatory's picture.
+schema = 1
+
+[project]
+id = "git-rhizoid/git-rhizoid.github.io"
+name = "Rhizoid: fork, own and sync git dependencies instead of relying on a package manager"
+title = "Rhizoid"
+kind = "tool"
+parent = "open-commons-observatory"
+
+[exports]
+concepts = "data/concepts.json"
+backlog = "data/backlog.json"
+milestones = "oco/milestones.json"
+session_log = "data/session_log.json"
+activity = "oco/gathered/activity.json@oco-data"
+releases = "oco/gathered/releases.json@oco-data"
+ci = "oco/gathered/ci.json@oco-data"
