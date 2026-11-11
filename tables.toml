@@ -57,7 +57,7 @@ type = "string"
 required = true
 
 [[tables.concepts.fields]]
-name = "statement"
+name = "summary"
 type = "string"
 required = true
 
