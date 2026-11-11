@@ -286,3 +286,21 @@ Entry date
 
 Done
 : This repository moved to tad in Rust: tables.toml is the authority, tad comes from its pinned release, the vendored .tad, schema.sql, load.sql and checks/ are gone, and AGENTS.md got simpler. The open item about dc.py blocking recovery from an empty table closed with it.
+
+---
+
+
+<a id="2026-11-11-one-word-summary"></a>
+### A concept's text is its summary
+
+Entry date
+: 2026-11-11
+
+Done
+: The concepts table's statement field is now summary, the word the shared language (ocoeco's language.toml) and twenty other projects use; the observatory showed this repository's concepts without their text because of it. Found by checking every project against the shared language.
+
+Considered
+: Teaching the shared language a second word for the same thing.
+
+Rejected
+: That: one role, one word.

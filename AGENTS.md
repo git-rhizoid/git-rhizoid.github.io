@@ -27,8 +27,8 @@ make verify   # exactly what CI runs
 ## Recipes
 Add or change content:
 ```
-tad set concepts --key id --set "name=Name" --set "statement=One-line statement."
-tad set concepts --key example-one --set "statement=..."
+tad set concepts --key id --set "name=Name" --set "summary=One-line summary."
+tad set concepts --key example-one --set "summary=..."
 make render && make verify
 ```
 A new field: declare it in `tables.toml` (a `[[tables.<table>.fields]]` entry with its `name` and `type`, and `required`, `enum` or `pattern` if it has them), then `make canon`: every line gains the field, empty. A required field is then given a value on every row with `tad set` before `make verify` passes.
