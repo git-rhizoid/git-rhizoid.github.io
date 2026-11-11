@@ -17,12 +17,8 @@ Markdown site, published here at the org's own root URL.
 - [`docs/backlog.md`](docs/backlog.md) - open items, tracked as data rather than as issues or prose.
 - [`docs/sources.md`](docs/sources.md) - what was actually researched before any of this was built.
 
-## How it works
-`data/` is the source of truth - a SQL schema, one JSON-lines file per table - edited via SQL and
-written back canonically, so a one-row change is a one-line diff. The engine (`dc.py`, the
-renderer, the checks runner) is vendored from [tad-engine](https://github.com/creation-guidelines/tad-engine)
-as a `git subrepo` at `.tad/`; see [`.tad/README.md`](.tad/README.md) for how to pull engine
-updates.
+The data is kept as plain JSON lines in `data/`, its tables declared in `tables.toml`, and checked, kept
+canonical and rendered by [tad](https://github.com/creation-guidelines/tad-engine), a released Rust tool.
 
 ## Status
 No license has been chosen.

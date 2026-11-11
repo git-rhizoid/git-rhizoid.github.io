@@ -10,7 +10,7 @@ next version number and to write `CHANGELOG.md`, so the type you pick has a real
 | Type | Use for | Version bump |
 |---|---|---|
 | `feat` | New content, a new table, a new column, a new capability | minor |
-| `fix` | A correction: wrong fact, wrong constraint, a bug in `.tad/` | patch |
+| `fix` | A correction: wrong fact, wrong constraint, a bug in tad (`tad-engine`) | patch |
 | `docs` | Hand-written docs only (README, this file, AGENTS.md) - not the generated `docs/` pages, which travel with the `feat`/`fix` commit that changed the data | patch, no changelog entry by default |
 | `refactor` | Reshaping data or tooling with no behavior or content change | patch, no changelog entry |
 | `chore` | Housekeeping: dependency bumps, formatting | no bump, no changelog entry |
@@ -34,6 +34,6 @@ chore(deps): bump duckdb
 
 ## Workflow
 
-See [`AGENTS.md`](AGENTS.md) for the day-to-day recipes (`make sql`, schema changes, when to reach
+See [`AGENTS.md`](AGENTS.md) for the day-to-day recipes (`tad set`, schema changes, when to reach
 for Miller). In short: change data through SQL, never hand-edit `data/*.json` or `docs/*.md`, and
 finish with `make verify` before opening a PR.
