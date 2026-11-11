@@ -6,7 +6,7 @@
 // No `ignores` rule for git-subrepo's own commits: `git subrepo clone/pull/push` all accept
 // -m/--message and it fully replaces the tool's auto-generated message (verified directly - see
 // creation-guidelines/tad-engine's README). Always pass -m with a real Conventional Commits
-// message (see .tad/README.md and AGENTS.md); if commitlint ever flags a subrepo sync commit,
+// message (see AGENTS.md); if commitlint ever flags such a commit,
 // that means -m was forgotten, and the fix is to amend the message, not to exempt the pattern.
 module.exports = {
   extends: ["@commitlint/config-conventional"],

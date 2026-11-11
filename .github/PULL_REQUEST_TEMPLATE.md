@@ -1,7 +1,7 @@
 ## What changed
 
 ## Checklist
-- [ ] Data changed only through `make sql` / `make canon` (never by hand-editing `data/*.json`)
+- [ ] Data changed only through `tad set` / `make canon` (never by hand-editing `data/*.json`)
 - [ ] `make render` run; `docs/` committed if data changed
 - [ ] `make verify` passes locally
 - [ ] Commits follow Conventional Commits (see CONTRIBUTING.md) - this is enforced on the PR

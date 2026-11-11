@@ -1,63 +1,42 @@
 # AGENTS.md - how to work in this repository
 
-This repo is a small versioned "database" kept as plain files. The data lives as JSON-lines plus
-a SQL schema; SQL edits it; CI enforces that it stays valid, canonical, and rendered. **Work on
-the content. The system in `.tad/` is generic and should rarely need to change.**
+This repo is a small versioned "database" kept as plain files. The data lives as JSON lines, its tables
+declared in `tables.toml`; [tad](https://github.com/creation-guidelines/tad-engine), a released Rust tool,
+checks it, keeps it canonical and renders it, and CI enforces that it stays so. **Work on the content.**
 
 ## Setup (once per session)
 ```
-make setup    # pins DuckDB (pip) and Miller (mlr) to the versions .tad/bootstrap.sh installs
-make test     # tests for .tad/ itself
+make setup    # installs tad, the data engine, from its pinned release (its checksum checked)
 make verify   # exactly what CI runs
 ```
-
-If `.tad/` is a plain folder rather than a git subrepo (check for `.tad/.gitrepo` - if it's
-missing, it's plain), this repo was likely just generated from the template and needs
-`./bin/adopt-engine.sh` run once, before any other commit touches `.tad/`. See
-[`.tad/README.md`](.tad/README.md) for what that does and how to pull engine updates afterward.
 
 ## Layout
 | Path | What | Who writes it |
 |---|---|---|
-| `data/schema.sql` | DDL, one `CREATE` per table | you, by SQL `ALTER` or by hand (see below) |
-| `data/load.sql` | `COPY` statements | DuckDB only |
-| `data/<table>.json` | one JSON object per line (JSONL despite the extension) | DuckDB only |
-| `checks/*.sql` | invariants: each query must return **no rows** | you |
+| `tables.toml` | every table declared as data - fields, types, allowed values, patterns - and the rules across tables | you, by hand (see below) |
+| `data/<table>.json` | one JSON object per line (JSONL despite the extension) | `tad` only |
 | `docs/*.md` | rendered pages, published to GitHub Pages | `make render` only |
-| `.tad/` | the reusable engine (generic, schema-agnostic) | rarely - see `.tad/README.md` |
 
 ## Rules
-1. **Never hand-edit `data/*.json` or `docs/*.md`.** Change data through SQL: `make sql Q="UPDATE ...; SELECT ..."`. Then `make render`.
-2. **Always finish with `make canon`** (`make sql` does this automatically). DuckDB must write the final bytes, or CI fails on a non-canonical diff. A plain `mlr` pass rewrites every line with different whitespace.
-3. **No BLOB columns.** They corrupt on the first JSON round trip. Use base64 `VARCHAR`.
-4. **Do not change DuckDB session settings** such as `preserve_insertion_order`; row order is what keeps diffs at one line per changed row.
-5. **No foreign keys.** They block nearly every `ALTER TABLE` on the referenced table. Put referential integrity in `checks/*.sql` instead.
-6. **Commits follow Conventional Commits** and are linted on the PR; see [`CONTRIBUTING.md`](CONTRIBUTING.md) for the type/scope convention this repo uses and why it matters (it drives the automated release and changelog).
-7. **New or changed factual claims need a source**, if your schema has a sources-like table (columns `title`, `url`) - see `.tad/tools/render.py`'s docstring for the exact convention it detects.
+1. **Never hand-edit `data/*.json` or anything in `docs/`.** Change a row with `tad set`: it checks the whole repository and keeps nothing that breaks a rule. Then `make render`.
+2. **Always finish with `make verify`**: tad must write the final bytes (`tad canon`), or CI fails on a non-canonical diff.
+3. **Integrity lives in `tables.toml`**: ids unique across tables (`unique_ids`), both ends of a relation existing (`references`), everything cited (`appears_in`). `tad check` runs every rule.
+4. **Commits follow Conventional Commits** and are linted on the PR; see [`CONTRIBUTING.md`](CONTRIBUTING.md) for the type/scope convention this repo uses and why it matters (it drives the automated release and changelog).
+5. **New or changed factual claims need a source**, if your schema has a sources-like table (columns `title`, `url`); tad renders the citations by detecting that shape.
 
 ## Recipes
 Add or change content:
 ```
-make sql Q="INSERT INTO concepts VALUES ('id','Name','One-line statement.',[])"
-make sql Q="UPDATE concepts SET statement = '...' WHERE id = 'example-one'"
+tad set concepts --key id --set "name=Name" --set "statement=One-line statement."
+tad set concepts --key example-one --set "statement=..."
 make render && make verify
 ```
-Schema change, when DuckDB allows it (add column with default, rename column, drop a non-key column, change a non-key type, `SET NOT NULL`, rename table):
-```
-make sql Q="ALTER TABLE concepts ADD COLUMN maturity VARCHAR DEFAULT 'stable'"
-```
-Schema change DuckDB refuses (add a column with constraints, `ADD CONSTRAINT CHECK`, drop or retype a key column):
-```
-# 1. edit the CREATE line in data/schema.sql by hand
-# 2. give every data line the new key (Miller, in place):
-mlr -I --ijsonl --ojsonl put '$weight = 1' data/concepts.json
-# 3. validate and normalize; a wrong edit fails loudly here and leaves files untouched
-make canon && make render && make verify
-```
-Rename a field across all lines: `mlr -I --ijsonl --ojsonl rename old,new data/<table>.json`, edit the same name in `data/schema.sql`, then `make canon`. Forgetting the schema edit is caught by `make check` (DuckDB itself would silently load NULLs).
+A new field: declare it in `tables.toml` (a `[[tables.<table>.fields]]` entry with its `name` and `type`, and `required`, `enum` or `pattern` if it has them), then `make canon`: every line gains the field, empty. A required field is then given a value on every row with `tad set` before `make verify` passes.
+
+Rename a field: `mlr -I --ijsonl --ojsonl rename old,new data/<table>.json`, make the same change in `tables.toml`, then `make canon` (forgetting the declaration is caught by `make check`).
 
 ## Why it is built this way
-- DuckDB is the engine (in memory; no `.db` file is committed). `IMPORT DATABASE` loads `data/`, `EXPORT DATABASE ... (FORMAT json)` writes it back byte-stably.
-- `.tad/tools/dc.py check` exists because DuckDB's `COPY FROM json` silently drops unknown keys and NULL-fills missing nullable columns.
-- `.tad/tools/render.py` is schema-agnostic by detecting shapes (a relation table, a sources table) structurally, not by name, so it works on a fresh schema with no configuration.
-- Findings and measurements behind these rules were made on a first content repo, [`creation-guidelines/software-engineering-canon`](https://github.com/creation-guidelines/software-engineering-canon), which this template was extracted from.
+- The data is plain text in git: one JSON object per line, so a change to one row is a one-line diff, readable without any tool.
+- `tables.toml` declares the tables as data (after Frictionless Data's Table Schema): a person reads it, and [tad](https://github.com/creation-guidelines/tad-engine) checks every row and every rule across tables against it.
+- The renderer is schema-agnostic: it detects shapes (a relation table, a sources table, a status grid) structurally, not by name, so a new table needs no configuration.
+- tad replaced a vendored Python engine (DuckDB) on 2026-11-11, after giving the same verdicts, the same canonical bytes and the same documents on this repository and three others.

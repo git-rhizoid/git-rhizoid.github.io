@@ -10,12 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
-        with:
-          python-version: "3.12"
-          cache: pip
-      - run: pip install -r .tad/requirements.txt
-      - name: Tooling tests
-        run: make test
+      - name: tad, from its pinned release
+        run: TAD_DEST="$HOME/.local/bin" ./bin/install-tad.sh && echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - name: Data valid, canonical, docs fresh
         run: make verify

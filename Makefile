@@ -1,25 +1,20 @@
-# Thin entry point. Everything it calls lives in .tad/ (the engine); see .tad/README.md.
+# Thin entry point. The data engine is tad (creation-guidelines/tad-engine), a released Rust tool;
+# tables.toml declares the tables and the rules across them.
 SHELL := /bin/bash
-DC = python3 .tad/tools/dc.py
+TAD ?= tad
 
-.PHONY: setup check checks canon render sql test verify
-setup:            ## install pinned DuckDB + Miller
-	./.tad/bootstrap.sh
-check:            ## key guard: unknown or vanished JSON keys in data/
-	$(DC) check
-checks:           ## invariant queries in checks/*.sql
-	$(DC) checks
-canon:            ## import -> validate -> canonical export of data/
-	$(DC) canon
-render:           ## data/ -> docs/*.md
-	python3 .tad/tools/render.py
-sql:              ## make sql Q="UPDATE ...; SELECT ..."
-	$(DC) sql "$(Q)"
-test:             ## tests for .tad/ itself
-	python3 .tad/tests/test_dc.py
-verify: check checks   ## what CI runs: data is valid and canonical, docs are fresh
+.PHONY: setup check canon render verify
+setup:            ## install tad from its pinned release (its checksum checked)
+	./bin/install-tad.sh
+check:            ## every row and every rule across tables (tables.toml)
+	$(TAD) check
+canon:            ## rewrite data/ in canonical form (only when it checks out)
+	$(TAD) canon
+render:           ## data/ -> docs/
+	$(TAD) render
+verify: check     ## what CI runs: data is valid and canonical, docs are fresh
 	@before="$$(find data docs -type f -print0 | sort -z | xargs -0 sha256sum)"; \
-	$(DC) canon && python3 .tad/tools/render.py; \
+	$(TAD) canon && $(TAD) render; \
 	after="$$(find data docs -type f -print0 | sort -z | xargs -0 sha256sum)"; \
 	if [ "$$before" != "$$after" ]; then \
 	  echo "data/ or docs/ was not canonical/fresh and has been rewritten. Review and commit:"; \
