@@ -274,3 +274,15 @@ Considered
 
 Rejected
 : That: a step nothing serves should be seen.
+
+---
+
+
+<a id="2026-11-11-tad-in-rust"></a>
+### tad in Rust replaces the vendored Python engine
+
+Entry date
+: 2026-11-11
+
+Done
+: This repository moved to tad in Rust: tables.toml is the authority, tad comes from its pinned release, the vendored .tad, schema.sql, load.sql and checks/ are gone, and AGENTS.md got simpler. The open item about dc.py blocking recovery from an empty table closed with it.

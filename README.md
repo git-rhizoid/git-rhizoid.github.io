@@ -17,6 +17,7 @@ Markdown site, published here at the org's own root URL.
 - [`docs/backlog.md`](docs/backlog.md) - open items, tracked as data rather than as issues or prose.
 - [`docs/sources.md`](docs/sources.md) - what was actually researched before any of this was built.
 
+## How it works
 The data is kept as plain JSON lines in `data/`, its tables declared in `tables.toml`, and checked, kept
 canonical and rendered by [tad](https://github.com/creation-guidelines/tad-engine), a released Rust tool.
 
