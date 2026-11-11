@@ -58,10 +58,10 @@ Opened
 ### dc.py check() blocks recovering from an all-empty table
 
 Status
-: open
+: done
 
 Note
-: check() validates the on-disk state before new SQL runs, so wiping every row in a table (to clear example content, say) leaves no way back through dc.py sql alone - the empty state always fails column-has-no-data ahead of the very INSERT that would fix it. Worked around once by seeding directly via DuckDB; the real fix is probably running check() after the SQL too, or making it tolerant of a table that is empty on both sides.
+: Gone with the switch to tad in Rust (2026-11-11): tad has no rule that every field must appear on some line, so an empty table checks out and canon keeps it - tried on a copy.
 
 Opened
 : 2026-09-22
