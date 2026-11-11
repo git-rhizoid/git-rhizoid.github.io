@@ -1,4 +1,4 @@
-<!-- Generated from data/ by .tad/tools/render.py. Do not edit by hand. -->
+<!-- Generated from data/ by tad. Do not edit by hand. -->
 
 # Sources
 
