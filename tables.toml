@@ -1,0 +1,163 @@
+# git-rhizoid/git-rhizoid.github.io's tables, declared as data (tad). Generated from data/schema.sql by tad declare; the rules
+# across tables are written by hand from checks/*.sql. The authority stays schema.sql and checks/
+# until the switch to tad in Rust; both are proven to give the same verdicts.
+[tables.backlog]
+key = ["id"]
+
+[[tables.backlog.fields]]
+name = "id"
+type = "string"
+required = true
+pattern = "^[a-z0-9]+(-[a-z0-9]+)*$"
+
+[[tables.backlog.fields]]
+name = "title"
+type = "string"
+required = true
+
+[[tables.backlog.fields]]
+name = "status"
+type = "string"
+required = true
+enum = ["open", "in-progress", "done"]
+
+[[tables.backlog.fields]]
+name = "note"
+type = "string"
+
+[[tables.backlog.fields]]
+name = "opened"
+type = "date"
+required = true
+
+[tables.concept_sources]
+key = ["concept_id", "source_id"]
+
+[[tables.concept_sources.fields]]
+name = "concept_id"
+type = "string"
+required = true
+
+[[tables.concept_sources.fields]]
+name = "source_id"
+type = "string"
+required = true
+
+[tables.concepts]
+key = ["id"]
+
+[[tables.concepts.fields]]
+name = "id"
+type = "string"
+required = true
+pattern = "^[a-z0-9]+(-[a-z0-9]+)*$"
+
+[[tables.concepts.fields]]
+name = "name"
+type = "string"
+required = true
+
+[[tables.concepts.fields]]
+name = "statement"
+type = "string"
+required = true
+
+[[tables.concepts.fields]]
+name = "tags"
+type = "list"
+required = true
+
+[tables.relations]
+key = ["from_id", "to_id", "relation"]
+distinct = [["from_id", "to_id"]]
+
+[[tables.relations.fields]]
+name = "from_id"
+type = "string"
+required = true
+
+[[tables.relations.fields]]
+name = "to_id"
+type = "string"
+required = true
+
+[[tables.relations.fields]]
+name = "relation"
+type = "string"
+required = true
+
+[[tables.relations.fields]]
+name = "note"
+type = "string"
+
+[tables.session_log]
+key = ["id"]
+
+[[tables.session_log.fields]]
+name = "id"
+type = "string"
+required = true
+pattern = "^[a-z0-9]+(-[a-z0-9]+)*$"
+
+[[tables.session_log.fields]]
+name = "entry_date"
+type = "date"
+required = true
+
+[[tables.session_log.fields]]
+name = "title"
+type = "string"
+required = true
+
+[[tables.session_log.fields]]
+name = "done"
+type = "string"
+required = true
+
+[[tables.session_log.fields]]
+name = "considered"
+type = "string"
+
+[[tables.session_log.fields]]
+name = "rejected"
+type = "string"
+
+[tables.sources]
+key = ["id"]
+
+[[tables.sources.fields]]
+name = "id"
+type = "string"
+required = true
+pattern = "^[a-z0-9]+(-[a-z0-9]+)*$"
+
+[[tables.sources.fields]]
+name = "title"
+type = "string"
+required = true
+
+[[tables.sources.fields]]
+name = "url"
+type = "string"
+required = true
+starts_with = "https://"
+
+[[tables.sources.fields]]
+name = "author"
+type = "string"
+
+[[tables.sources.fields]]
+name = "year"
+type = "integer"
+
+# Rules across tables (from checks/*.sql, written by hand; proven against them)
+[[rules.unique_ids]]
+tables = ["concepts", "backlog", "session_log"]
+
+[[rules.references]]
+field = "relations.from_id"
+to = ["concepts", "backlog", "session_log"]
+
+[[rules.references]]
+field = "relations.to_id"
+to = ["concepts", "backlog", "session_log"]
