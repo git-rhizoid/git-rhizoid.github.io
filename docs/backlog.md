@@ -78,3 +78,16 @@ Note
 
 Opened
 : 2026-09-22
+
+
+<a id="rhizcut"></a>
+### rhizcut: the tool that takes a cutting
+
+Status
+: open
+
+Note
+: Named by the milestone rhizoid-carries-ocoeco's criteria but never recorded: found 2026-11-12 when ocoeco check followed every link. The milestone is right to depend on it.
+
+Opened
+: 2026-11-12
