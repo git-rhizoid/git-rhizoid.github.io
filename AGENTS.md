@@ -35,6 +35,13 @@ A new field: declare it in `tables.toml` (a `[[tables.<table>.fields]]` entry wi
 
 Rename a field: `mlr -I --ijsonl --ojsonl rename old,new data/<table>.json`, make the same change in `tables.toml`, then `make canon` (forgetting the declaration is caught by `make check`).
 
+Ask the data anything in SQL - joins, counts, what is missing - and change it the same way; a change through SQL is checked exactly as `tad set` is, and kept only if every rule still holds:
+```
+tad sql "SELECT status, count(*) FROM backlog GROUP BY status"
+tad sql "UPDATE backlog SET status = 'done' WHERE id = 'an-id'"
+tad sql --file a-query.sql --format csv
+```
+
 ## Why it is built this way
 - The data is plain text in git: one JSON object per line, so a change to one row is a one-line diff, readable without any tool.
 - `tables.toml` declares the tables as data (after Frictionless Data's Table Schema): a person reads it, and [tad](https://github.com/creation-guidelines/tad-engine) checks every row and every rule across tables against it.
