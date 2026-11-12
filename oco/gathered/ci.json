@@ -1,25 +1,7 @@
-{"at":"2026-11-11T00:33:17Z","conclusion":"success","id":"ci","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/42932255784"}
-{"at":"2026-11-11T11:26:10Z","conclusion":"in_progress","id":"gather","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/43011923089"}
-{"at":"2026-09-29T14:43:54Z","conclusion":"success","id":"github_actions in /. - Update #1598094622","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/36584854985"}
-{"at":"2026-10-06T14:43:34Z","conclusion":"success","id":"github_actions in /. - Update #1613217117","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/37481374314"}
-{"at":"2026-10-14T17:53:39Z","conclusion":"success","id":"github_actions in /. - Update #1627474680","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/38610517728"}
-{"at":"2026-10-20T14:43:28Z","conclusion":"success","id":"github_actions in /. - Update #1639868018","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/39441841936"}
-{"at":"2026-10-27T14:44:07Z","conclusion":"success","id":"github_actions in /. - Update #1658241120","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/40523974813"}
-{"at":"2026-11-03T14:44:08Z","conclusion":"success","id":"github_actions in /. - Update #1677899307","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/41656608517"}
-{"at":"2026-11-10T14:48:33Z","conclusion":"success","id":"github_actions in /. - Update #1693137472","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/42837854356"}
-{"at":"2026-09-29T14:43:54Z","conclusion":"success","id":"npm_and_yarn in /. - Update #1598094615","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/36584855182"}
-{"at":"2026-10-06T14:43:34Z","conclusion":"success","id":"npm_and_yarn in /. - Update #1613217163","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/37481374273"}
-{"at":"2026-10-14T17:53:49Z","conclusion":"success","id":"npm_and_yarn in /. - Update #1627475430","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/38610541764"}
-{"at":"2026-10-20T14:43:34Z","conclusion":"success","id":"npm_and_yarn in /. - Update #1639868683","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/39441856481"}
-{"at":"2026-10-27T14:44:07Z","conclusion":"success","id":"npm_and_yarn in /. - Update #1658241086","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/40523975583"}
-{"at":"2026-11-03T14:44:08Z","conclusion":"success","id":"npm_and_yarn in /. - Update #1677899297","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/41656608311"}
-{"at":"2026-11-10T14:48:33Z","conclusion":"success","id":"npm_and_yarn in /. - Update #1693137463","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/42837853675"}
-{"at":"2026-11-11T00:33:17Z","conclusion":"success","id":"pages build and deployment","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/42932254776"}
-{"at":"2026-09-29T14:43:54Z","conclusion":"success","id":"pip in /.tad - Update #1598094620","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/36584854788"}
-{"at":"2026-10-06T14:43:34Z","conclusion":"success","id":"pip in /.tad - Update #1613217159","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/37481374457"}
-{"at":"2026-10-14T17:53:26Z","conclusion":"success","id":"pip in /.tad - Update #1627473573","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/38610488792"}
-{"at":"2026-10-20T14:43:28Z","conclusion":"success","id":"pip in /.tad - Update #1639868061","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/39441841642"}
-{"at":"2026-10-27T14:44:07Z","conclusion":"success","id":"pip in /.tad - Update #1658241107","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/40523974615"}
-{"at":"2026-11-03T14:44:08Z","conclusion":"success","id":"pip in /.tad - Update #1677899291","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/41656608851"}
-{"at":"2026-11-10T14:48:33Z","conclusion":"success","id":"pip in /.tad - Update #1693137453","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/42837854345"}
-{"at":"2026-11-11T00:33:17Z","conclusion":"success","id":"release","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/42932255774"}
+{"at":"2026-11-12T01:09:14Z","conclusion":"success","id":"ci","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/43132480800"}
+{"at":"2026-11-12T11:48:32Z","conclusion":"in_progress","id":"gather","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/43212315682"}
+{"at":"2026-11-11T17:51:41Z","conclusion":"success","id":"github_actions in /. - Update #1696450226","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/43072201959"}
+{"at":"2026-11-11T17:51:40Z","conclusion":"success","id":"npm_and_yarn in /. - Update #1696450216","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/43072201414"}
+{"at":"2026-11-12T01:09:14Z","conclusion":"success","id":"pages build and deployment","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/43132480416"}
+{"at":"2026-11-11T17:32:02Z","conclusion":"failure","id":"pip in /.tad for duckdb - Update #1696414939","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/43069080904"}
+{"at":"2026-11-12T01:09:14Z","conclusion":"success","id":"release","link":"https://github.com/git-rhizoid/git-rhizoid.github.io/actions/runs/43132480890"}
