@@ -3,3 +3,4 @@
 {"id":"g-20261112-010648","at":"2026-11-12T01:06:48Z","by":"lab-agent-session","kind":"build","summary":"tad 0.5.0: the pin moved, the data and documents re-rendered"}
 {"id":"g-20261112-010844","at":"2026-11-12T01:08:44Z","by":"lab-agent-session","kind":"feat","summary":"SQL is back: make sql, tad engine in setup, the recipe"}
 {"id":"g-20261112-131723","at":"2026-11-12T13:17:23Z","by":"lab-agent-session","kind":"docs","summary":"rhizcut recorded: a milestone depended on an item never written down","advances":"backlog:rhizcut milestones:rhizoid-carries-ocoeco","touches":"backlog:rhizcut"}
+{"id":"g-20261113-065606","at":"2026-11-13T06:56:06Z","by":"Claude","kind":"docs","summary":"a milestone ahead of its evidence, raised"}
