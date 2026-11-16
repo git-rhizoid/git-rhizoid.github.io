@@ -5,3 +5,4 @@
 {"id":"g-20261112-131723","at":"2026-11-12T13:17:23Z","by":"lab-agent-session","kind":"docs","summary":"rhizcut recorded: a milestone depended on an item never written down","advances":"backlog:rhizcut milestones:rhizoid-carries-ocoeco","touches":"backlog:rhizcut"}
 {"id":"g-20261113-065606","at":"2026-11-13T06:56:06Z","by":"Claude","kind":"docs","summary":"a milestone ahead of its evidence, raised"}
 {"id":"g-20261113-072415","at":"2026-11-13T07:24:15Z","by":"Claude","kind":"docs","summary":"a problem withdrawn: the record was right, the reading was wrong"}
+{"id":"g-20261116-144830","at":"2026-11-16T14:48:30Z","by":"claude","kind":"chore","summary":"a mark: the latest runs are observed, as runs - no longer gathered here"}
