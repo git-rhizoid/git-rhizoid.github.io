@@ -100,7 +100,46 @@ Status
 : open
 
 Note
-: Found 2026-11-17 by grenudi/ideal-knowledge-base (research chain-follow-world, decision 2026-11-17-chain-follow-by-slice). Its chain - idealkb to device-template to device bases - lays a slice, not a repository: a source names what it gives (a generic list, files whole or the part between two marker lines), a follower pins a release and names its own files, and the verdict says whether the follower changed a generic file (idealkb's bin/follow.sh ends 3). rhizoid today takes a whole fork (a cutting); this is the consumption side design-consumption-side leaves open. follow.sh and update-pins.sh are the prototype; when rhizoid has it, idealkb can hand its chain over. Also lacking for that chain: the pin read from the follower's own file, a release gate (every follower answers before a release is tagged), and sending a changed generic file back as a patch.
+: Found 2026-11-17 by grenudi/ideal-knowledge-base (research chain-follow-world, decision 2026-11-17-chain-follow-by-slice). Its chain - idealkb to device-template to device bases - lays a slice, not a repository: a source names what it gives (a generic list, files whole or the part between two marker lines), a follower pins a release and names its own files, and the verdict says whether the follower changed a generic file (idealkb's bin/follow.sh ends 3). rhizoid today takes a whole fork (a cutting); this is the consumption side design-consumption-side leaves open. follow.sh and update-pins.sh are the prototype; when rhizoid has it, idealkb can hand its chain over. Also lacking for that chain: the pin read from the follower's own file, a release gate (every follower answers before a release is tagged), and sending a changed generic file back as a patch. Also 2026-11-17: the tools home (linux-phone-oco/lab-tools) has the same slice case for the device-template files that go with a tool - the [boot] manifest skeleton, hook examples, an initramfs skeleton - beside the tool's own version pin (see cutting-as-cargo-dependency, followers-one-pin-bump).
+
+Opened
+: 2026-11-17
+
+
+<a id="cutting-as-cargo-dependency"></a>
+### A cutting consumed by a language manager: the patched fork of a Rust tool as a cargo git dependency at a pinned tag, written and bumped by rhizoid
+
+Status
+: open
+
+Note
+: Found 2026-11-17 by linux-phone-oco/docs (research bringup-home-follow-and-rhizoid, decision 2026-11-17-bringup-in-lab-tools). A device repository uses lab-tools' bringup as a pinned binary or cargo git dependency; when it must patch the tool itself before upstream takes the change, the true case is a cutting of lab-tools (tracking branch pristine, patch branch merged from it, clean patch back). What rhizoid lacks is the consumption side for it: the follower declares this tool, this cutting, this tag, and rhizoid writes the pin where the language manager reads it (Cargo.toml git tag or [patch] entry; a rust-script file's cargo header; a version line in a manifest) and bumps it when the tracking branch has a new release - the open item design-consumption-side, for a case that now has a user. Until then: a plain fork and a [patch] line by hand, recorded as a problem.
+
+Opened
+: 2026-11-17
+
+
+<a id="followers-one-pin-bump"></a>
+### Many followers, one pin and one verdict: a slice, a cutting and a tool version bumped by the same weekly job
+
+Status
+: open
+
+Note
+: Found 2026-11-17 by linux-phone-oco/docs (same research). A device repository follows three sources - idealkb (a slice), device-template (a slice) and lab-tools (a tool version, maybe a cutting) - each with its own pin line, and today an updater (idealkb's update-pins.sh) only for the slices. Lacking: one pin file the follower owns (source, kind slice|cutting|tool, release), one command that bumps every pin to the newest release and opens a pull request per source, and one verdict (up to date, behind, own change to a generic file) that CI can gate on. update-pins.sh and follow.sh's exit 3 are the prototype; slice-consumption is the first kind.
+
+Opened
+: 2026-11-17
+
+
+<a id="send-back-writes-the-upstream-item"></a>
+### Sending a change back: a patch to the source as a pull request, and the follower's own record of it
+
+Status
+: open
+
+Note
+: Found 2026-11-17 by linux-phone-oco/docs (same research). clean-patch-back says a diff of the patch branch against the pristine tracking branch is a clean patch; the CLI that makes it and opens the pull request is stubbed. The follower's bases keep an upstream item per change (idealkb: ikb upstream-item, form patch, draft, ready on the person's word, sent with the PR address, landed when released). Lacking: a rhizoid verb that, for a changed generic file or a patch branch, writes the patch, opens the pull request only after the person says ready, and returns the PR address and later the release that carried it, in a form the follower's record command takes - without rhizoid knowing that base's tables. It never sends in the person's name by itself.
 
 Opened
 : 2026-11-17
