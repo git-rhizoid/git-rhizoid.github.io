@@ -91,3 +91,16 @@ Note
 
 Opened
 : 2026-11-12
+
+
+<a id="slice-consumption"></a>
+### Consumption mode for a slice: take a named list of files from a pinned release of a repository into one that has its own files
+
+Status
+: open
+
+Note
+: Found 2026-11-17 by grenudi/ideal-knowledge-base (research chain-follow-world, decision 2026-11-17-chain-follow-by-slice). Its chain - idealkb to device-template to device bases - lays a slice, not a repository: a source names what it gives (a generic list, files whole or the part between two marker lines), a follower pins a release and names its own files, and the verdict says whether the follower changed a generic file (idealkb's bin/follow.sh ends 3). rhizoid today takes a whole fork (a cutting); this is the consumption side design-consumption-side leaves open. follow.sh and update-pins.sh are the prototype; when rhizoid has it, idealkb can hand its chain over. Also lacking for that chain: the pin read from the follower's own file, a release gate (every follower answers before a release is tagged), and sending a changed generic file back as a patch.
+
+Opened
+: 2026-11-17
