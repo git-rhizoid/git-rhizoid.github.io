@@ -304,3 +304,21 @@ Considered
 
 Rejected
 : That: one role, one word.
+
+---
+
+
+<a id="2026-11-18-scope-every-edge"></a>
+### Scope from linux-phone-oco's graph research: the follow tool for every edge, status first, by conformance
+
+Entry date
+: 2026-11-18
+
+Done
+: A research lead of linux-phone-oco measured its repository graph (12 edges, 3 moved by a job, 6 by hand, 5 behind) and the world (no Rust or shell tool carries root-level files down and changes up; only copybara, on a JVM; josh needs a monorepo; subtree/subrepo need a prefix - the tad/subrepo lesson of 2026-09-22 again). It filed status-over-every-edge and follow-by-conformance here and reshaped slice-consumption, followers-one-pin-bump, send-back-writes-the-upstream-item and implement-cli to that order (source linux-phone-oco-base-graph).
+
+Considered
+: Porting idealkb's follow.sh into rhizoid now; rhizoid as a template engine; rows as an edge kind.
+
+Rejected
+: A port before conformance (the shell works and is tested); a template engine or a merge of data (bases are data); rows (docs' feeds own them).

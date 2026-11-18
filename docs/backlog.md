@@ -22,7 +22,7 @@ Status
 : open
 
 Note
-: Boundary layer implemented: manifest infra, 7 argenv-typed commands, 39 tests, real CI including MSRV all green (see implement-boundary-layer). init and remove fully work; add/import/update/status/refresh are typed and tested but stubbed, waiting on the GitHubPort adapter. Parked 2026-11-11: tad's duties move into ocoeco; this returns there, or with the first cutting.
+: Boundary layer implemented: manifest infra, 7 argenv-typed commands, 39 tests, real CI including MSRV all green (see implement-boundary-layer). init and remove fully work; add/import/update/status/refresh are typed and tested but stubbed, waiting on the GitHubPort adapter. Parked 2026-11-11: tad's duties move into ocoeco; this returns there, or with the first cutting. Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word.
 
 Opened
 : 2026-09-22
@@ -100,7 +100,7 @@ Status
 : open
 
 Note
-: Found 2026-11-17 by grenudi/ideal-knowledge-base (research chain-follow-world, decision 2026-11-17-chain-follow-by-slice). Its chain - idealkb to device-template to device bases - lays a slice, not a repository: a source names what it gives (a generic list, files whole or the part between two marker lines), a follower pins a release and names its own files, and the verdict says whether the follower changed a generic file (idealkb's bin/follow.sh ends 3). rhizoid today takes a whole fork (a cutting); this is the consumption side design-consumption-side leaves open. follow.sh and update-pins.sh are the prototype; when rhizoid has it, idealkb can hand its chain over. Also lacking for that chain: the pin read from the follower's own file, a release gate (every follower answers before a release is tagged), and sending a changed generic file back as a patch. Also 2026-11-17: the tools home (linux-phone-oco/lab-tools) has the same slice case for the device-template files that go with a tool - the [boot] manifest skeleton, hook examples, an initramfs skeleton - beside the tool's own version pin (see cutting-as-cargo-dependency, followers-one-pin-bump).
+: Found 2026-11-17 by grenudi/ideal-knowledge-base (research chain-follow-world, decision 2026-11-17-chain-follow-by-slice). Its chain - idealkb to device-template to device bases - lays a slice, not a repository: a source names what it gives (a generic list, files whole or the part between two marker lines), a follower pins a release and names its own files, and the verdict says whether the follower changed a generic file (idealkb's bin/follow.sh ends 3). rhizoid today takes a whole fork (a cutting); this is the consumption side design-consumption-side leaves open. follow.sh and update-pins.sh are the prototype; when rhizoid has it, idealkb can hand its chain over. Also lacking for that chain: the pin read from the follower's own file, a release gate (every follower answers before a release is tagged), and sending a changed generic file back as a patch. Also 2026-11-17: the tools home (linux-phone-oco/lab-tools) has the same slice case for the device-template files that go with a tool - the [boot] manifest skeleton, hook examples, an initramfs skeleton - beside the tool's own version pin (see cutting-as-cargo-dependency, followers-one-pin-bump). Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word.
 
 Opened
 : 2026-11-17
@@ -126,7 +126,7 @@ Status
 : open
 
 Note
-: Found 2026-11-17 by linux-phone-oco/docs (same research). A device repository follows three sources - idealkb (a slice), device-template (a slice) and lab-tools (a tool version, maybe a cutting) - each with its own pin line, and today an updater (idealkb's update-pins.sh) only for the slices. Lacking: one pin file the follower owns (source, kind slice|cutting|tool, release), one command that bumps every pin to the newest release and opens a pull request per source, and one verdict (up to date, behind, own change to a generic file) that CI can gate on. update-pins.sh and follow.sh's exit 3 are the prototype; slice-consumption is the first kind.
+: Found 2026-11-17 by linux-phone-oco/docs (same research). A device repository follows three sources - idealkb (a slice), device-template (a slice) and lab-tools (a tool version, maybe a cutting) - each with its own pin line, and today an updater (idealkb's update-pins.sh) only for the slices. Lacking: one pin file the follower owns (source, kind slice|cutting|tool, release), one command that bumps every pin to the newest release and opens a pull request per source, and one verdict (up to date, behind, own change to a generic file) that CI can gate on. update-pins.sh and follow.sh's exit 3 are the prototype; slice-consumption is the first kind. Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word.
 
 Opened
 : 2026-11-17
@@ -139,7 +139,33 @@ Status
 : open
 
 Note
-: Found 2026-11-17 by linux-phone-oco/docs (same research). clean-patch-back says a diff of the patch branch against the pristine tracking branch is a clean patch; the CLI that makes it and opens the pull request is stubbed. The follower's bases keep an upstream item per change (idealkb: ikb upstream-item, form patch, draft, ready on the person's word, sent with the PR address, landed when released). Lacking: a rhizoid verb that, for a changed generic file or a patch branch, writes the patch, opens the pull request only after the person says ready, and returns the PR address and later the release that carried it, in a form the follower's record command takes - without rhizoid knowing that base's tables. It never sends in the person's name by itself.
+: Found 2026-11-17 by linux-phone-oco/docs (same research). clean-patch-back says a diff of the patch branch against the pristine tracking branch is a clean patch; the CLI that makes it and opens the pull request is stubbed. The follower's bases keep an upstream item per change (idealkb: ikb upstream-item, form patch, draft, ready on the person's word, sent with the PR address, landed when released). Lacking: a rhizoid verb that, for a changed generic file or a patch branch, writes the patch, opens the pull request only after the person says ready, and returns the PR address and later the release that carried it, in a form the follower's record command takes - without rhizoid knowing that base's tables. It never sends in the person's name by itself. Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word.
 
 Opened
 : 2026-11-17
+
+
+<a id="status-over-every-edge"></a>
+### rhizoid status: one read-only report over every edge a repository has - a slice (pin vs source release, followed files equal, own files on their way up), a tool pin (vs latest tag), a cutting (tracking vs upstream head) - exit 1 on drift
+
+Status
+: open
+
+Note
+: Found 2026-11-18 by linux-phone-oco (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)). The first command to build: no risk, it replaces docs' graph-drift.sh (36 FAIL today) and passes it line for line. Edges are read from the pin files followers already own (idealkb.toml, devicebase.toml, lab.toml [tools], a fork's .rhizoid/module.toml), so the follower lists derive from the pins. Rust with argenv, the CLI's status command.
+
+Opened
+: 2026-11-18
+
+
+<a id="follow-by-conformance"></a>
+### rhizoid follow lays a slice exactly as idealkb's bin/follow.sh does, proven by its fixtures, before update-pins calls it
+
+Status
+: open
+
+Note
+: Found 2026-11-18 by linux-phone-oco (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)). Passes grenudi/ideal-knowledge-base bin/test-follow.sh byte for byte and keeps three things its owner names: the pin names its source, one owner per file (check-one-owner), the followers' gate before a release (followers-answer.sh). Adds #! from = DIR/ and own needing an upstream item (idealkb items idealkb-slice-from-prefix, idealkb-own-needs-item) only after idealkb has them. Until it passes, the shell is the tool. Blocked by status-over-every-edge.
+
+Opened
+: 2026-11-18

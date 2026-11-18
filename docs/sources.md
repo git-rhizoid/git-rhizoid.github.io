@@ -152,3 +152,16 @@ Author
 
 Cited by
 : [argenv declares flags and env vars - not subcommands or positionals](concepts.md#argenv-is-flags-and-env-only)
+
+
+<a id="linux-phone-oco-base-graph"></a>
+### linux-phone-oco docs: research base-graph-measured and base-graph-world, decision 2026-11-18-device-layer-from-docs
+
+Url
+: https://github.com/linux-phone-oco/docs/tree/main/research/base-graph/2026-11-18
+
+Author
+: linux-phone-oco
+
+Year
+: 2026
