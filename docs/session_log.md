@@ -322,3 +322,21 @@ Considered
 
 Rejected
 : A port before conformance (the shell works and is tested); a template engine or a merge of data (bases are data); rows (docs' feeds own them).
+
+---
+
+
+<a id="2026-11-18-unparked-by-the-authors-yes"></a>
+### git-rhizoid unparked by the author's yes: the follow tool for every edge, in the research's order
+
+Entry date
+: 2026-11-18
+
+Done
+: The author's word, verbatim (through the Top Coordinator, 2026-11-18, recorded in linux-phone-oco/docs as session-log 2026-11-18-author-yes-device-layer-and-rhizoid): 'yes, if its the best we came up with, grounded in our extensive research and consideration, which it seems it did, so yes'. It unparks implement-cli with the scope of 2026-11-18-scope-every-edge and its order, now the backlog's rank: 1 status-over-every-edge (passes graph-drift.sh), 2 follow-by-conformance (passes idealkb's bin/test-follow.sh, keeping the pin names its source, one owner per file, the followers-answer gate), 3-4 slice-consumption and followers-one-pin-bump, 5 send-back, 6-7 cuttings (rhizcut, cutting-as-cargo-dependency). Owner: git-rhizoid-builder, who keeps AGENTS.md's Owner line here and in git-rhizoid/rhizoid. Each step replaces shell only once it passes; idealkb's update-pins and follow.sh stay until step 2 passes.
+
+Considered
+: Unparking only status and leaving the rest parked; ranking only the first two.
+
+Rejected
+: Leaving the order in notes: the rank is a field now, so the next builder reads it rather than infers it.

@@ -19,10 +19,10 @@ Opened
 ### Implement the actual rhizoid CLI
 
 Status
-: open
+: in-progress
 
 Note
-: Boundary layer implemented: manifest infra, 7 argenv-typed commands, 39 tests, real CI including MSRV all green (see implement-boundary-layer). init and remove fully work; add/import/update/status/refresh are typed and tested but stubbed, waiting on the GitHubPort adapter. Parked 2026-11-11: tad's duties move into ocoeco; this returns there, or with the first cutting. Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word.
+: Boundary layer implemented: manifest infra, 7 argenv-typed commands, 39 tests, real CI including MSRV all green (see implement-boundary-layer). init and remove fully work; add/import/update/status/refresh are typed and tested but stubbed, waiting on the GitHubPort adapter. Parked 2026-11-11: tad's duties move into ocoeco; this returns there, or with the first cutting. Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word. Unparked 2026-11-18, the author said: 'yes, if its the best we came up with, grounded in our extensive research and consideration, which it seems it did, so yes' (through the Top Coordinator, 2026-11-18; docs session-log 2026-11-18-author-yes-device-layer-and-rhizoid): git-rhizoid has the research's scope and order - status-over-every-edge, follow-by-conformance, send-back-writes-the-upstream-item, then cuttings - each replacing shell only once it passes the shell's tests. Owner: git-rhizoid-builder. This item is the umbrella; its first step is status-over-every-edge.
 
 Opened
 : 2026-09-22
@@ -92,6 +92,9 @@ Note
 Opened
 : 2026-11-12
 
+Rank
+: 6
+
 
 <a id="slice-consumption"></a>
 ### Consumption mode for a slice: take a named list of files from a pinned release of a repository into one that has its own files
@@ -104,6 +107,9 @@ Note
 
 Opened
 : 2026-11-17
+
+Rank
+: 3
 
 
 <a id="cutting-as-cargo-dependency"></a>
@@ -118,6 +124,9 @@ Note
 Opened
 : 2026-11-17
 
+Rank
+: 7
+
 
 <a id="followers-one-pin-bump"></a>
 ### Many followers, one pin and one verdict: a slice, a cutting and a tool version bumped by the same weekly job
@@ -130,6 +139,9 @@ Note
 
 Opened
 : 2026-11-17
+
+Rank
+: 4
 
 
 <a id="send-back-writes-the-upstream-item"></a>
@@ -144,18 +156,24 @@ Note
 Opened
 : 2026-11-17
 
+Rank
+: 5
+
 
 <a id="status-over-every-edge"></a>
 ### rhizoid status: one read-only report over every edge a repository has - a slice (pin vs source release, followed files equal, own files on their way up), a tool pin (vs latest tag), a cutting (tracking vs upstream head) - exit 1 on drift
 
 Status
-: open
+: in-progress
 
 Note
-: Found 2026-11-18 by linux-phone-oco (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)). The first command to build: no risk, it replaces docs' graph-drift.sh (36 FAIL today) and passes it line for line. Edges are read from the pin files followers already own (idealkb.toml, devicebase.toml, lab.toml [tools], a fork's .rhizoid/module.toml), so the follower lists derive from the pins. Rust with argenv, the CLI's status command.
+: Found 2026-11-18 by linux-phone-oco (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)). The first command to build: no risk, it replaces docs' graph-drift.sh (36 FAIL today) and passes it line for line. Edges are read from the pin files followers already own (idealkb.toml, devicebase.toml, lab.toml [tools], a fork's .rhizoid/module.toml), so the follower lists derive from the pins. Rust with argenv, the CLI's status command. Unparked 2026-11-18 (see implement-cli): first in the author's order. Built in rhizoid-cli: status reads a graph file of the edges and each follower's own pin files at origin/main, reports every edge current, behind or moved by hand, exits 1 on drift, and is proven by graph-drift.sh's cases as fixtures and by agreeing with graph-drift.sh run on the real graph.
 
 Opened
 : 2026-11-18
+
+Rank
+: 1
 
 
 <a id="follow-by-conformance"></a>
@@ -169,3 +187,6 @@ Note
 
 Opened
 : 2026-11-18
+
+Rank
+: 2

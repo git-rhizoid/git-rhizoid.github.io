@@ -1,5 +1,7 @@
 # AGENTS.md - how to work in this repository
 
+**Owner**: `git-rhizoid-builder` - the role that keeps git-rhizoid (this design log and the rhizoid tool), whichever session holds it (signing as `git-rhizoid-builder.RUN`); another session sends it the change - a message, or an upstream item naming git-rhizoid - and does not land here itself.
+
 This repo is a small versioned "database" kept as plain files. The data lives as JSON lines, its tables
 declared in `tables.toml`; [tad](https://github.com/creation-guidelines/tad-engine), a released Rust tool,
 checks it, keeps it canonical and renders it, and CI enforces that it stays so. **Work on the content.**
