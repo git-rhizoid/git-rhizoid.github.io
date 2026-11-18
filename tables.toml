@@ -29,6 +29,11 @@ name = "opened"
 type = "date"
 required = true
 
+# where the item stands in the order the author unparked git-rhizoid with (1 first; empty: after the ranked)
+[[tables.backlog.fields]]
+name = "rank"
+type = "integer"
+
 [tables.concept_sources]
 key = ["concept_id", "source_id"]
 
