@@ -9,3 +9,4 @@
 {"id":"yaml-document-from-hell","title":"The YAML Document From Hell","url":"https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell","author":"Ruud van Asseldonk","year":2023}
 {"id":"wrangler-toml-to-jsonc","title":"The future of Wrangler configuration","url":"https://github.com/cloudflare/workers-sdk/discussions/1951","author":"Cloudflare workers-sdk","year":null}
 {"id":"argenv-repo","title":"argenv","url":"https://github.com/argenv-opencommons/argenv","author":"argenv-opencommons","year":null}
+{"id":"linux-phone-oco-base-graph","title":"linux-phone-oco docs: research base-graph-measured and base-graph-world, decision 2026-11-18-device-layer-from-docs","url":"https://github.com/linux-phone-oco/docs/tree/main/research/base-graph/2026-11-18","author":"linux-phone-oco","year":2026}

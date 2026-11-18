@@ -10,3 +10,4 @@
 {"id":"g-20261116-160937","at":"2026-11-16T16:09:37Z","by":"claude","kind":"chore","summary":"a caller: what the gatherer writes is said where it writes it, not here"}
 {"id":"g-20261117-174558","at":"2026-11-17T17:45:58Z","by":"ikb-cli","kind":"docs","summary":"Backlog: rhizoid lacks a consumption mode for a slice (idealkb's chain needs it)"}
 {"id":"g-20261117-193335","at":"2026-11-17T19:33:35Z","by":"research-bringup-tools","kind":"docs","summary":"Backlog: what a tools home needs of rhizoid (cargo pin, one pin bump, send back)"}
+{"id":"g-20261118-144738","at":"2026-11-18T14:47:38Z","by":"rhizoid-graph-research","kind":"docs","summary":"Backlog: rhizoid's scope - the follow tool for every edge, status first, by conformance"}
