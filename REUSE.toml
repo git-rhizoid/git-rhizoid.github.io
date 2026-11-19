@@ -1,0 +1,37 @@
+version = 1
+SPDX-PackageName = "git-rhizoid.github.io"
+SPDX-PackageDownloadLocation = "https://github.com/git-rhizoid/git-rhizoid.github.io"
+
+# decision 2026-11-19-licences-for-our-repositories: the site and the data are CC-BY-SA-4.0; the scripts that
+# build and check them are MIT OR Apache-2.0. Paths are listed, not swept up by `**`, so a new top-level file is
+# not covered until someone says what it is: bin/check-licences.sh fails on it in CI.
+[[annotations]]
+path = [
+  "data/**",
+  "docs/**",
+  "oco/**",
+  "tables.toml",
+  "README.md",
+  "AGENTS.md",
+  "CONTRIBUTING.md",
+  "CHANGELOG.md",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 git-rhizoid contributors"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = [
+  "bin/**",
+  ".github/**",
+  ".gitignore",
+  ".release-please-manifest.json",
+  "Makefile",
+  "commitlint.config.js",
+  "oco.toml",
+  "package.json",
+  "release-please-config.json",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 git-rhizoid contributors"
+SPDX-License-Identifier = "MIT OR Apache-2.0"
