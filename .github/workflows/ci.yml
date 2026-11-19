@@ -14,3 +14,5 @@ jobs:
         run: TAD_DEST="$HOME/.local/bin" ./bin/install-tad.sh && echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - name: Data valid, canonical, docs fresh
         run: make verify
+      - name: Licences (every tracked file is covered)
+        run: sh bin/check-licences.sh

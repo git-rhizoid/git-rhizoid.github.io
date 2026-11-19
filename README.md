@@ -23,3 +23,9 @@ canonical and rendered by [tad](https://github.com/creation-guidelines/tad-engin
 
 ## Status
 No license has been chosen.
+
+## Licence
+
+The site and the data are [CC-BY-SA-4.0](LICENSE-CC-BY-SA-4.0); the scripts that build and check them are MIT OR Apache-2.0
+([`LICENSE-MIT`](LICENSE-MIT), [`LICENSE-APACHE`](LICENSE-APACHE)). Each path's licence is in [`REUSE.toml`](REUSE.toml), and
+`bin/check-licences.sh` fails CI on a tracked file it does not cover.
