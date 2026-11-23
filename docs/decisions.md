@@ -69,3 +69,25 @@ About
 
 Supersedes
 : the order of session_log 2026-11-18-unparked-by-the-authors-yes
+
+
+<a id="2026-11-23-rhizoid-stays-general"></a>
+### 2026-11-23-rhizoid-stays-general
+
+Date
+: 2026-11-23
+
+Brief
+: rhizoid holds no default path, names, tag pattern or branch scheme of any one project in code: list files and graphs name them; the kernel layout is an example.
+
+Decision
+: No default path, names, tag pattern or branch scheme of any one project in code. assemble's list file is a required argument (--lists, or RHIZOID_LISTS); it names its own optional name (device is read as name, for files labs already wrote), its tag template (tag = "int/{name}/{list}/{base}/{n}" only as the default) and the branch patterns its lists may name (none: any branch). status reads an [[integration]] edge whose scheme, topics and the shape of assembled tags are the graph's data. ABOUT and the README say what rhizoid is for any repository; linux-phone-oco's kernel layout is an example in examples/ (kernel-topics.toml, kernel.graph.toml).
+
+Why
+: The author asked (2026-11-23, relayed by the rhizoid lane coordinator): "rhizoid is a general tool, not bound to only kernel ?" - it is, and must stay so. The Top Coordinator found three places in v0.1.1 that assumed kernels or devices: the default list path kernel/topics.toml, ABOUT's "assemble test kernels", and the hard-wired int/{device}/{list}/{base}/ tag with a device field.
+
+Rejected
+: Kernel defaults kept for convenience (they bind the tool to one user); a built-in kernel profile or subcommand (the same, hidden); a required device field (a name is optional, and only a tag template may use it).
+
+About
+: rhizoid assemble and rhizoid status

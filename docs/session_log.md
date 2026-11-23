@@ -394,3 +394,21 @@ Considered
 
 Rejected
 : autoUpdate in the clone's config (it would stage rerere's replays in a person's own merges; rhizoid passes it per run); refusing stale local branches (unpushed local work is common on a kernel clone; the recipe names the sha that went in, and the README says so).
+
+---
+
+
+<a id="2026-11-23-rhizoid-v0-2-0-general-and-integration-status"></a>
+### rhizoid v0.2.0: status over integration edges; assemble ends worktrees, reuses unchanged tags, and stays general
+
+Entry date
+: 2026-11-23
+
+Done
+: Landed git-rhizoid/rhizoid PR #13, released as v0.2.0 (PR #14). Backlog status-over-kernel-edges is done, as general [[integration]] edges. Also in it: the Steward's check of assemble v0.1.1 (--done TAG [--force]; a conflict leaves the worktree unlocked; an unchanged recipe is its tag; tested_commit a commit's sha), the ikb record keys, and decision 2026-11-23-rhizoid-stays-general (--lists required; the list file names its tag template and branch patterns; device is read as name). Three programmer reviews before landing; every point fixed. The send-back row now carries ikb upstream-item's field names.
+
+Considered
+: A kernel profile kept as a default; persisting rerere.autoUpdate; refusing every local branch that differs from origin's.
+
+Rejected
+: As in decision 2026-11-23-rhizoid-stays-general; flagging stale local branches in status (branch-origin) rather than refusing them in assemble, since unpushed local work is common.
