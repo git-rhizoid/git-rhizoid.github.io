@@ -20,3 +20,4 @@
 {"id":"g-20261123-035454","at":"2026-11-23T03:54:54Z","by":"git-rhizoid-builder","kind":"docs","summary":"assemble-from-list done: rhizoid assemble released in v0.1.1"}
 {"id":"g-20261123-042054","at":"2026-11-23T04:20:54Z","by":"git-rhizoid-builder","kind":"docs","summary":"rhizoid v0.2.0: integration status, assemble refinements, rhizoid stays general"}
 {"id":"g-20261123-043431","at":"2026-11-23T04:34:31Z","by":"git-rhizoid-builder","kind":"docs","summary":"send-back-writes-the-upstream-item done: rhizoid send-back released in v0.2.1"}
+{"id":"g-20261123-045056","at":"2026-11-23T04:50:56Z","by":"git-rhizoid-builder","kind":"docs","summary":"rhizoid v0.2.2: send-back drafts, status asks origin and the releases source"}

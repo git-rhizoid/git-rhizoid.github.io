@@ -430,3 +430,21 @@ Considered
 
 Rejected
 : A shell (argv only: a config is not a script); keeping a conflicted send branch (the fix belongs on the topic branch, so nothing is kept); built-in exceptions (they are the check's own arguments, in config).
+
+---
+
+
+<a id="2026-11-23-rhizoid-v0-2-2-drafts-and-remote-status"></a>
+### rhizoid v0.2.2: send-back drafts; status asks origin and the releases source
+
+Entry date
+: 2026-11-23
+
+Done
+: Landed git-rhizoid/rhizoid PR #17 (status: branch-origin asks origin with ls-remote, so a clone tracking one branch still answers; an integration edge names its releases source and topic-base is not-known-yet without one; remote asks never hang or prompt; a shallow clone's missing release is not-known-yet) and PR #19 (send-back drafts, as the send-back row says), released as v0.2.2 (PR #18). Each was reviewed by the programmer subagent before landing, every point fixed.
+
+Considered
+: A --sent SHA flag to mark a version sent now; counting local-only topics as drift.
+
+Rejected
+: --sent now (marking a version sent stays the author's one manual step until he wants it); local-only topics as drift (unpushed work is normal; status names them without failing).
