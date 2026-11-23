@@ -670,3 +670,21 @@ Considered
 
 Rejected
 : See decision 2026-11-23-reference-edge.
+
+---
+
+
+<a id="2026-11-23-rhizoid-v0-3-13"></a>
+### rhizoid v0.3.13: the [[reference]] edge
+
+Entry date
+: 2026-11-23
+
+Done
+: v0.3.13 (PR #57, release PR #58): [[reference]] in the graph, status's reference check, status --fetch making a missing tag at its commit and never moving one, name-scheme accepting reference tags, assemble refusing them, rhizoid check counting them. The asset checked by sha256; it reads docs' graph (references=0 until walleye's edge lands).
+
+Considered
+: Fetch into FETCH_HEAD or into a private ref (chosen); refuse reference tags in assemble only with --graph, or also from rhizoid.graph.toml here (chosen).
+
+Rejected
+: FETCH_HEAD: another fetch in the clone may write it between the fetch and the read.

@@ -405,10 +405,10 @@ Opened
 ### A [[reference]] edge: a fixed tag of a source read beside the work, checked by status, never merged or moved
 
 Status
-: open
+: done
 
 Note
-: Decision 2026-11-23-reference-edge. Fields repo, name, url, ref, commit, tag, why (depth optional); rhizoid check knows it. status reference check: current / behind (with the fetch command) / moved-by-hand; status --fetch fills a missing tag only. bump, update, send-back ignore it; assemble refuses a reference tag as base or entry; name-scheme accepts it. First users: walleye's Android kernel (reference/android-walleye/BUILD) in linux-phone-oco/linux, then surya's vendor kernel. Proof: fixtures for each status verdict, --fetch filling a missing tag and leaving a present one, assemble refusing a reference base; docs' graph with walleye's edge reads current on the lab once fetched.
+: Decision 2026-11-23-reference-edge. Fields repo, name, url, ref, commit, tag, why (depth optional); rhizoid check knows it. status reference check: current / behind (with the fetch command) / moved-by-hand; status --fetch fills a missing tag only. bump, update, send-back ignore it; assemble refuses a reference tag as base or entry; name-scheme accepts it. First users: walleye's Android kernel (reference/android-walleye/BUILD) in linux-phone-oco/linux, then surya's vendor kernel. Proof: fixtures for each status verdict, --fetch filling a missing tag and leaving a present one, assemble refusing a reference base; docs' graph with walleye's edge reads current on the lab once fetched. Done in rhizoid v0.3.13 (PR #57). Reviewed by the programmer subagent, which found and had fixed: a ref with : or + is a refspec that could write or move a ref of the clone (ref and tag are now plain ref names), an uppercase commit could never match (lowercase only), the printed fetch was unquoted (each value quoted, update-ref create-only), FETCH_HEAD could be overwritten by another fetch (a private ref instead), no submodules and https/ssh/git/file only, a non-commit tag read as itself, and assemble now also reads rhizoid.graph.toml here when no --graph is named. Proof: fixtures for each verdict; a real-git test where --fetch makes a missing tag, refuses a branch that moved on, and leaves a moved tag where it is; assemble refusing a reference base and entry. Left: docs' graph with walleye's edge reading current on the lab once fetched (docs' graph has no [[reference]] yet).
 
 Opened
 : 2026-11-23

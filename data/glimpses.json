@@ -39,3 +39,4 @@
 {"id":"g-20261123-121429","at":"2026-11-23T12:14:29Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.12: the bump unit's PATH has ~/.cargo/bin"}
 {"id":"g-20261123-150534","at":"2026-11-23T15:05:34Z","by":"mll","kind":"docs","summary":"A reference edge: a source read beside the work, a fixed tag, never merged"}
 {"id":"g-20261123-150619","at":"2026-11-23T15:06:19Z","by":"mll","kind":"docs","summary":"Queue the reference edge build"}
+{"id":"g-20261123-151850","at":"2026-11-23T15:18:50Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.13: the [[reference]] edge"}
