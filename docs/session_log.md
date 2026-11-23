@@ -652,3 +652,21 @@ Entry date
 
 Done
 : v0.3.12 (PR #55, release PR #56). The coordinator found the 12:04 and 13:00 gate failures: under rhizoid-bump.service lab-tools' attended tests panicked with rust-script NotFound, the unit's PATH having no ~/.cargo/bin (fixed meanwhile in the lab's bump.env). The shipped unit now sets PATH=%h/.cargo/bin:%h/.local/bin:/usr/local/bin:/usr/bin:/bin, and the README says a gate runs with the unit's PATH, not a login shell's. Pages: release asset present on v0.3.12; unit read back from main.
+
+---
+
+
+<a id="2026-11-23-reference-edge-research"></a>
+### Research: where a working system's own source sits beside the work (Android's Pixel 2 kernel beside the port)
+
+Entry date
+: 2026-11-23
+
+Done
+: Need: agents must read the working system's source before a fix (ideal-agent decision 2026-11-23-a-stop-is-read-before-the-fix); Android's walleye kernel is read a web page at a time, often not at all. What is: the kernel clone linux-phone-oco/linux (grenudi/linux) already holds an informal remote pulpoff (a surya port) and no reference tag. How others do it: porters keep the downstream kernel beside the mainline port and read it while porting (FOSDEM 2022 porting talk; postmarketOS keeps backups of downstream kernels because vendor trees vanish); Android and LineageOS name each repository at a fixed revision in a repo manifest (repo manifest format; a LineageOS local manifest pins android_kernel_google_* by revision). Git's own ways: --reference/alternates borrow objects from another repository but give no named tree and break when that repository is pruned; submodules nest a pinned commit inside the tree, where it gets built and merged. A tag fetched into the same clone gives a fixed, named tree that shares Linux's objects with the port, so git diff, log -S and grep run across both in every worktree.
+
+Considered
+: Alternates or clone --reference; a submodule; a separate clone per reference; a repo manifest; a remote-tracking branch; a [[fork]] edge; web pages as today.
+
+Rejected
+: See decision 2026-11-23-reference-edge.

@@ -17,3 +17,10 @@
 {"concept_id":"one-pushed-mover-per-pin","source_id":"update-flake-lock"}
 {"concept_id":"one-pushed-mover-per-pin","source_id":"lpoco-host-follows-releases"}
 {"concept_id":"one-pushed-mover-per-pin","source_id":"idealkb-own-files-read-as-declared"}
+{"concept_id":"reference-edge","source_id":"git-clone-reference"}
+{"concept_id":"reference-edge","source_id":"gitrepository-layout-alternates"}
+{"concept_id":"reference-edge","source_id":"git-submodule"}
+{"concept_id":"reference-edge","source_id":"repo-manifest-format"}
+{"concept_id":"reference-edge","source_id":"lineage-roomservice-example"}
+{"concept_id":"reference-edge","source_id":"pmos-backup-downstream-kernels"}
+{"concept_id":"reference-edge","source_id":"fosdem-2022-porting-mainline"}

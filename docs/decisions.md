@@ -163,3 +163,28 @@ About
 
 Research
 : 2026-11-23-why-pins-drift-research
+
+
+<a id="2026-11-23-reference-edge"></a>
+### 2026-11-23-reference-edge
+
+Date
+: 2026-11-23
+
+Brief
+: A [[reference]] edge names a source read beside the work: a fixed tag in the work's clone, checked by status, never merged, pushed, bumped or sent back.
+
+Decision
+: [[reference]] in the graph: repo (the clone it lives in, by the graph's [clones] key), name, url, ref (the upstream tag or branch at the build), commit (the exact sha: the check), tag (the local tag, e.g. reference/android-walleye/BUILD) and why. status's reference check: the tag exists and peels to commit is current; missing is behind, printing the fetch that makes it; any other commit is moved-by-hand. status --fetch fetches ref from url into the tag only when the tag is missing (depth when the edge gives one), and never moves an existing tag. A reference is no pin and no fork: bump, update and send-back never read it, and assemble refuses a list whose base or entry is a reference tag; name-scheme accepts the reference tags it names. Generic: any repository, any source (a vendor kernel, busybox, an AOSP piece).
+
+Why
+: The Top relayed the need with the author's agreement, 2026-11-23: read the working system's source before fixing; walleye's Android kernel at the phone's exact build, then surya's vendor kernel. Research 2026-11-23-reference-edge-research: a tag in the same clone gives a fixed named tree that shares objects with the port and is in every worktree, as porters keep a downstream tree beside the port and repo manifests pin each repository by revision.
+
+Rejected
+: Alternates or clone --reference: borrows objects only, no named tree, and the clone breaks when the borrowed repository is pruned. A submodule: puts the reference inside the tree, where it is built and merged. A separate clone per reference: gigabytes again, and no diff or log -S across the two trees. A repo manifest: a new tool for one entry per clone. A remote-tracking branch: moves on every fetch, not fixed at the build. A [[fork]] edge: forks are tracked, updated and pushed. Web pages: read rarely, as today.
+
+About
+: graph, status, reference
+
+Research
+: 2026-11-23-reference-edge-research

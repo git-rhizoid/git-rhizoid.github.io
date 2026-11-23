@@ -286,3 +286,94 @@ Author
 
 Cited by
 : [One pushed mover per pin](concepts.md#one-pushed-mover-per-pin)
+
+
+<a id="git-clone-reference"></a>
+### git clone --reference and --dissociate (borrowing objects from another repository)
+
+Url
+: https://git-scm.com/docs/git-clone
+
+Author
+: Git project
+
+Cited by
+: [Reference edge](concepts.md#reference-edge)
+
+
+<a id="gitrepository-layout-alternates"></a>
+### gitrepository-layout: objects/info/alternates
+
+Url
+: https://git-scm.com/docs/gitrepository-layout
+
+Author
+: Git project
+
+Cited by
+: [Reference edge](concepts.md#reference-edge)
+
+
+<a id="git-submodule"></a>
+### git-submodule
+
+Url
+: https://git-scm.com/docs/git-submodule
+
+Author
+: Git project
+
+Cited by
+: [Reference edge](concepts.md#reference-edge)
+
+
+<a id="repo-manifest-format"></a>
+### repo Manifest Format (project name, path, remote, revision)
+
+Url
+: https://gerrit.googlesource.com/git-repo/+/HEAD/docs/manifest-format.md
+
+Author
+: Android Open Source Project
+
+Cited by
+: [Reference edge](concepts.md#reference-edge)
+
+
+<a id="lineage-roomservice-example"></a>
+### A LineageOS local manifest pinning a device kernel repository by revision
+
+Url
+: https://github.com/dylanneve1-pixel/local_manifests/blob/master/roomservice.xml
+
+Author
+: dylanneve1-pixel
+
+Cited by
+: [Reference edge](concepts.md#reference-edge)
+
+
+<a id="pmos-backup-downstream-kernels"></a>
+### postmarketOS wiki: How to properly backup downstream kernels
+
+Url
+: https://wiki.postmarketos.org/wiki/How_to_properly_backup_downstream_kernels
+
+Author
+: postmarketOS
+
+Cited by
+: [Reference edge](concepts.md#reference-edge)
+
+
+<a id="fosdem-2022-porting-mainline"></a>
+### Porting mainline Linux to mobile phones (FOSDEM 2022): the downstream kernel kept as reference beside the port
+
+Url
+: https://archive.fosdem.org/2022/schedule/event/mobile_kernel_mainline/
+
+Author
+: FOSDEM 2022 speaker
+
+Cited by
+: [Reference edge](concepts.md#reference-edge)
