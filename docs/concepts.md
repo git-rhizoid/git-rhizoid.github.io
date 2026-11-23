@@ -218,3 +218,16 @@ Relations
 : → concerns: [argenv declares flags and env vars - not subcommands or positionals](concepts.md#argenv-is-flags-and-env-only) — the cli crate is where argenvs actual scope applies
 : → pairs-with: [Each fork carries its own .rhizoid/module.toml](concepts.md#module-metadata-file) — rhizoid-core owns both the top-level manifest type and the per-fork metadata type
 : → pairs-with: [The manifest is TOML, with the footgun that argues against it named up front](concepts.md#manifest-file-format) — rhizoid-core is where the TOML/schema decision actually gets implemented
+
+
+<a id="one-pushed-mover-per-pin"></a>
+### One pushed mover per pin
+
+Summary
+: Every pin a graph names has exactly one mover, named on its edge, and every mover runs by itself (a timer or a release) and lands through the follower's own checks; a person sees only a gate that failed. The graph covers a pin file's table whole, so a new pin without an edge is a finding, and a follower's declared own files read as declared.
+
+Tags
+: pins, bump, status, conveyor
+
+Sources
+: [Renovate docs: Automerge configuration and troubleshooting](https://docs.renovatebot.com/key-concepts/automerge/), [Renovate docs: Scheduling](https://docs.renovatebot.com/key-concepts/scheduling/), [Renovate docs: Managers (dependency discovery from files)](https://docs.renovatebot.com/modules/manager/), [Dependabot options reference (schedule.interval, package-ecosystem)](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference), [update-flake-lock: a GitHub Action that runs nix flake update on a schedule and opens a PR](https://github.com/DeterminateSystems/update-flake-lock), [linux-phone-oco decision 2026-11-19-host-follows-releases (the lab host follows releases and lands its own pin)](https://github.com/linux-phone-oco/docs/blob/main/data/decisions.json), [ideal-knowledge-base decision 2026-11-23-own-files-read-as-declared (PR 108)](https://github.com/grenudi/ideal-knowledge-base/blob/main/data/decisions.json)

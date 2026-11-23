@@ -538,3 +538,21 @@ Considered
 
 Rejected
 : Semver (it would sort a cut before its release); the clone's tags (a moved upstream tag would stop every update; rhizoid reads into refs/rhizoid/ instead).
+
+---
+
+
+<a id="2026-11-23-why-pins-drift-research"></a>
+### Research: why the author's pins condition (no drift, no busy work) was not met, and what prevents it by design
+
+Entry date
+: 2026-11-23
+
+Done
+: Looked at what is (docs' graph and rhizoid v0.3.2 on the lab machine, 2026-11-23): status counted 55 checks, 2 behind, 13 moved by hand. Four pin kinds have four different movers. Three already push by themselves, as user timers on the lab machine that land through land: idealkb-update-pins (hourly) for idealkb.toml slices, tad-update-pins (weekly) for bin/install-tad.sh, and lpoco-host-follow (15 min) for lab.toml tools.lpoco, which installs first and then lands the pin as the record of what runs (docs decision 2026-11-19-host-follows-releases, research host-conveyor). The kinds nothing runs are the [[tool]] Cargo pins (lpoco-attended in surya-lab and google-walleye-lab; walleye's is at 0.41.0 against 0.44.3) and lab.toml tools.rhizoid. Those are moved only when someone runs rhizoid bump. So pin-decision 2026-11-23-pins-stay-with-their-readers' wording, that bump is the only mover, was never true: lpoco has two possible movers (host follow and bump now). Cause 2: tools.rhizoid sat in lab.toml with no edge, and nothing compares a pin file's keys with the graph. Cause 3: status reports a follower's declared own files (idealkb.toml own with [why]) as moved by hand, 13 standing lines, while follow skips them whole (follow.sh lines 38-45 before the marker part at 51). Others: Renovate and Dependabot make behind a passing state by schedule plus automerge once the checks pass. A person sees only the PR whose check failed (Renovate automerge, scheduling; Dependabot schedule.interval). nix flake update runs from a scheduled CI job that opens a PR (update-flake-lock). Renovate finds every dependency by scanning files with managers, so a new dependency is covered without a list (Renovate managers).
+
+Considered
+: Make bump the one mover everywhere; a release hook in every source's CI; Renovate itself with regex managers; Dependabot; GitHub auto-merge on bump PRs; generating edges by scanning pin files; a suppress list in rhizoid for declared own files.
+
+Rejected
+: See decision 2026-11-23-every-pin-one-pushed-mover.

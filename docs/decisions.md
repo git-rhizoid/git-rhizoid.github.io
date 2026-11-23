@@ -138,3 +138,28 @@ About
 
 Supersedes
 : concepts manifest-file-format and fork-destination-manifest, for where a cutting is recorded
+
+
+<a id="2026-11-23-every-pin-one-pushed-mover"></a>
+### 2026-11-23-every-pin-one-pushed-mover
+
+Date
+: 2026-11-23
+
+Brief
+: Every pin has exactly one mover, named on its edge, and every mover pushes (a timer that lands through the follower's checks); the graph covers a pin table whole; declared own files read as declared.
+
+Decision
+: (1) One mover per pin, named on its edge: moved_by on [[tool]] and [[slice]] (the slices: idealkb-update-pins; tad: tad-update-pins; lab.toml tools.lpoco: lpoco-host-follow; default: rhizoid-bump). bump now moves only the edges whose mover is rhizoid-bump, and lists the rest with their mover. This amends 2026-11-23-pins-stay-with-their-readers: the one place to see every pin is still bump, but the one mover of a pin is the job its edge names, never two. (2) bump pushes too, the same way the other three do: bump now --land runs the graph's [bump] land argv (here ["land"]) on each bumped branch, so a bump lands when the follower's checks pass, and a failed gate or check leaves the one PR a person sees. rhizoid ships a user service and timer (packaging/systemd, hourly, rhizoid bump now --fetch --land on the graph) on idealkb-update-pins' pattern. Orchestration enables it on the lab host. (3) The graph covers a pin table whole: [[pins]] names a follower's file and table (lab.toml [tools]; a Cargo.toml's git dependencies), and status's pin-coverage check calls a key in it that no edge covers and no unpinned entry (with its why) excuses moved-by-hand, naming the key. A new pin is then a finding at the next status, which patrol runs each round. (4) status reads a slice follower's own and [why] as declared (idealkb decision 2026-11-23-own-files-read-as-declared): a file with a reason is current, with a note when the release changed it, and only an unlisted differing file is moved by hand. The test is the author's condition: no person runs bump, status shows no standing line for anything declared, and a pin is behind for no longer than one period of its mover.
+
+Why
+: The author, 2026-11-23, accepted pins-stay-with-their-readers on his condition 'if it does not introduce drift and busy work, then ok' and then asked why it was not met. Each gap got a fix after the fact: the tools.rhizoid edge, patrol watching behind pins, the idealkb noise. Research 2026-11-23-why-pins-drift-research: three of four pin kinds already push by timer, the fourth, rhizoid bump, is pull; nothing compares pin files with the graph; status reads declared intent as drift. Renovate, Dependabot and update-flake-lock make behind a passing state by schedule plus landing on green.
+
+Rejected
+: bump as the one mover everywhere: lpoco-host-follow must install before it lands the pin (the pin is the record of what runs), and idealkb-update-pins also lays files; replacing two working conveyors is churn. A release hook in each source's CI: a token into every follower from every source and config per source, while the lab already runs three timers. Renovate with regex managers or Dependabot: a new tool and service for what bump already does; Dependabot cannot read our pin files. GitHub auto-merge on bump PRs: our changes land through land (practice 7). Generating edges by scanning pin files, as Renovate's managers do: a key cannot say its source or tag scheme (tools.land and agent-env pin git revs, oco-work is unknown); a coverage check with declared exceptions covers a new pin without guessing. A suppress list inside rhizoid: a second place for what idealkb.toml already says.
+
+About
+: pins, bump, status
+
+Research
+: 2026-11-23-why-pins-drift-research

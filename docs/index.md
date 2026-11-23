@@ -2,8 +2,8 @@
 
 # Index
 
-- [Backlog](backlog.md): 17
-- [Concepts](concepts.md): 14
-- [Decisions](decisions.md): 6
-- [Session Log](session_log.md): 33
-- [Sources](sources.md): 15
+- [Backlog](backlog.md): 22
+- [Concepts](concepts.md): 15
+- [Decisions](decisions.md): 7
+- [Session Log](session_log.md): 34
+- [Sources](sources.md): 22

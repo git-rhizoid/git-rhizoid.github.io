@@ -248,3 +248,83 @@ Note
 
 Opened
 : 2026-11-23
+
+
+<a id="status-names-git-errors"></a>
+### A failed git call names git's error; a local tag that differs from origin's is a finding, not a stop
+
+Status
+: open
+
+Note
+: Orchestration, 2026-11-23: bump --fetch on lab-tools' clone stopped with an empty error; git had refused the stale local tag sxmo-utils-v1.18.1_p20261118 (would clobber existing tag). Every git failure prints its command and stderr (status, assemble, bump). A tag the clone holds differently from origin is moved-by-hand naming both shas, and the run goes on. No fetch --force: local tags (assembled int/ tags) stay. Proof: a fixture clone with a local tag differing from origin's.
+
+Opened
+: 2026-11-23
+
+Rank
+: 1
+
+
+<a id="status-reads-own"></a>
+### status reads a slice follower's own and [why] as declared
+
+Status
+: open
+
+Note
+: Decision 2026-11-23-every-pin-one-pushed-mover (4); idealkb decision 2026-11-23-own-files-read-as-declared, its item rhizoid-status-reads-own. An own file with a reason is current (a note when the release changed it, as follow says); upstream:ITEM stays a candidate; own with no [why] is a finding; an unlisted differing file is moved-by-hand. An own tables.toml is skipped whole, marked part included, as follow.sh does (lines 38-45 before 51). The names own and [why] come through the [[slice]] edge, not constants. Proof: status on docs' graph shows none of today's 13 lines for a declared file.
+
+Opened
+: 2026-11-23
+
+Rank
+: 1
+
+
+<a id="pin-mover-on-edge"></a>
+### Each pin's one mover is named on its edge (moved_by); bump now moves only rhizoid-bump's
+
+Status
+: open
+
+Note
+: Decision 2026-11-23-every-pin-one-pushed-mover (1). moved_by on [[tool]] and [[slice]], default rhizoid-bump; bump lists every pin with pin.N.moved_by and skips the others under now. docs' graph then names idealkb-update-pins, tad-update-pins and lpoco-host-follow (orchestration's edit). Proof: bump now on a fixture with a pin moved by another job leaves it, and lists it.
+
+Opened
+: 2026-11-23
+
+Rank
+: 2
+
+
+<a id="bump-lands-on-a-timer"></a>
+### bump now --land lands each bump through the follower's checks; a shipped user timer runs it hourly
+
+Status
+: open
+
+Note
+: Decision 2026-11-23-every-pin-one-pushed-mover (2). The graph's [bump] land argv (e.g. ["land"]) runs on each pushed bump branch; a failing gate or check leaves the PR and says why. packaging/systemd/rhizoid-bump.{service,timer} on idealkb-update-pins' pattern (token from the lab's private file). Orchestration enables it on the lab host. Proof: a fixture follower whose land stand-in passes gets the pin on main; one that fails keeps the branch and the PR, and the run names it.
+
+Opened
+: 2026-11-23
+
+Rank
+: 3
+
+
+<a id="pin-table-coverage"></a>
+### The graph covers a pin table whole: a pinned key no edge covers is a finding
+
+Status
+: open
+
+Note
+: Decision 2026-11-23-every-pin-one-pushed-mover (3). [[pins]] names a follower's file and table (lab.toml [tools]; a Cargo.toml's git dependencies) and unpinned keys each with a why (tools.land and agent-env pin git revs; oco-work unknown). status pin-coverage: a key neither an edge nor unpinned is moved-by-hand, naming it. Proof: adding a key to a fixture's [tools] with no edge makes the finding; listing it unpinned with a why clears it.
+
+Opened
+: 2026-11-23
+
+Rank
+: 4

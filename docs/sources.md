@@ -195,3 +195,94 @@ Url
 
 Author
 : The Git Project
+
+
+<a id="renovate-automerge"></a>
+### Renovate docs: Automerge configuration and troubleshooting
+
+Url
+: https://docs.renovatebot.com/key-concepts/automerge/
+
+Author
+: Mend Renovate
+
+Cited by
+: [One pushed mover per pin](concepts.md#one-pushed-mover-per-pin)
+
+
+<a id="renovate-scheduling"></a>
+### Renovate docs: Scheduling
+
+Url
+: https://docs.renovatebot.com/key-concepts/scheduling/
+
+Author
+: Mend Renovate
+
+Cited by
+: [One pushed mover per pin](concepts.md#one-pushed-mover-per-pin)
+
+
+<a id="renovate-managers"></a>
+### Renovate docs: Managers (dependency discovery from files)
+
+Url
+: https://docs.renovatebot.com/modules/manager/
+
+Author
+: Mend Renovate
+
+Cited by
+: [One pushed mover per pin](concepts.md#one-pushed-mover-per-pin)
+
+
+<a id="dependabot-options"></a>
+### Dependabot options reference (schedule.interval, package-ecosystem)
+
+Url
+: https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference
+
+Author
+: GitHub
+
+Cited by
+: [One pushed mover per pin](concepts.md#one-pushed-mover-per-pin)
+
+
+<a id="update-flake-lock"></a>
+### update-flake-lock: a GitHub Action that runs nix flake update on a schedule and opens a PR
+
+Url
+: https://github.com/DeterminateSystems/update-flake-lock
+
+Author
+: Determinate Systems
+
+Cited by
+: [One pushed mover per pin](concepts.md#one-pushed-mover-per-pin)
+
+
+<a id="lpoco-host-follows-releases"></a>
+### linux-phone-oco decision 2026-11-19-host-follows-releases (the lab host follows releases and lands its own pin)
+
+Url
+: https://github.com/linux-phone-oco/docs/blob/main/data/decisions.json
+
+Author
+: linux-phone-oco orchestration
+
+Cited by
+: [One pushed mover per pin](concepts.md#one-pushed-mover-per-pin)
+
+
+<a id="idealkb-own-files-read-as-declared"></a>
+### ideal-knowledge-base decision 2026-11-23-own-files-read-as-declared (PR 108)
+
+Url
+: https://github.com/grenudi/ideal-knowledge-base/blob/main/data/decisions.json
+
+Author
+: ideal-knowledge-base
+
+Cited by
+: [One pushed mover per pin](concepts.md#one-pushed-mover-per-pin)
