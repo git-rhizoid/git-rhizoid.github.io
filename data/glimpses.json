@@ -36,3 +36,4 @@
 {"id":"g-20261123-092610","at":"2026-11-23T09:26:10Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.9: rhizoid check, a graph never lands ahead of its host"}
 {"id":"g-20261123-111255","at":"2026-11-23T11:12:55Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.10: a failed gate is a draft pull request"}
 {"id":"g-20261123-112427","at":"2026-11-23T11:24:27Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.11: a failed gate's whole output kept"}
+{"id":"g-20261123-121429","at":"2026-11-23T12:14:29Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.12: the bump unit's PATH has ~/.cargo/bin"}
