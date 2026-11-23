@@ -231,3 +231,16 @@ Tags
 
 Sources
 : [Renovate docs: Automerge configuration and troubleshooting](https://docs.renovatebot.com/key-concepts/automerge/), [Renovate docs: Scheduling](https://docs.renovatebot.com/key-concepts/scheduling/), [Renovate docs: Managers (dependency discovery from files)](https://docs.renovatebot.com/modules/manager/), [Dependabot options reference (schedule.interval, package-ecosystem)](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference), [update-flake-lock: a GitHub Action that runs nix flake update on a schedule and opens a PR](https://github.com/DeterminateSystems/update-flake-lock), [linux-phone-oco decision 2026-11-19-host-follows-releases (the lab host follows releases and lands its own pin)](https://github.com/linux-phone-oco/docs/blob/main/data/decisions.json), [ideal-knowledge-base decision 2026-11-23-own-files-read-as-declared (PR 108)](https://github.com/grenudi/ideal-knowledge-base/blob/main/data/decisions.json)
+
+
+<a id="reference-edge"></a>
+### Reference edge
+
+Summary
+: A source read beside the work and never merged, pushed, bumped or sent back: the working system's own code (a vendor kernel at a phone's exact build), kept as a fixed tag in the clone the work lives in, so every worktree of that clone can read, diff and search it.
+
+Tags
+: graph, status, reference
+
+Sources
+: [git clone --reference and --dissociate (borrowing objects from another repository)](https://git-scm.com/docs/git-clone), [gitrepository-layout: objects/info/alternates](https://git-scm.com/docs/gitrepository-layout), [git-submodule](https://git-scm.com/docs/git-submodule), [repo Manifest Format (project name, path, remote, revision)](https://gerrit.googlesource.com/git-repo/+/HEAD/docs/manifest-format.md), [A LineageOS local manifest pinning a device kernel repository by revision](https://github.com/dylanneve1-pixel/local_manifests/blob/master/roomservice.xml), [postmarketOS wiki: How to properly backup downstream kernels](https://wiki.postmarketos.org/wiki/How_to_properly_backup_downstream_kernels), [Porting mainline Linux to mobile phones (FOSDEM 2022): the downstream kernel kept as reference beside the port](https://archive.fosdem.org/2022/schedule/event/mobile_kernel_mainline/)
