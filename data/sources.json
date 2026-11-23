@@ -10,3 +10,6 @@
 {"id":"wrangler-toml-to-jsonc","title":"The future of Wrangler configuration","url":"https://github.com/cloudflare/workers-sdk/discussions/1951","author":"Cloudflare workers-sdk","year":null}
 {"id":"argenv-repo","title":"argenv","url":"https://github.com/argenv-opencommons/argenv","author":"argenv-opencommons","year":null}
 {"id":"linux-phone-oco-base-graph","title":"linux-phone-oco docs: research base-graph-measured and base-graph-world, decision 2026-11-18-device-layer-from-docs","url":"https://github.com/linux-phone-oco/docs/tree/main/research/base-graph/2026-11-18","author":"linux-phone-oco","year":2026}
+{"id":"gitoxide","title":"gitoxide (gix): an idiomatic, pure Rust implementation of git","url":"https://github.com/GitoxideLabs/gitoxide","author":"Sebastian Thiel and contributors","year":null}
+{"id":"git2-rs","title":"git2-rs: libgit2 bindings for Rust","url":"https://github.com/rust-lang/git2-rs","author":"The Rust Project Developers","year":null}
+{"id":"git-rerere","title":"git-rerere - Reuse recorded resolution of conflicted merges","url":"https://git-scm.com/docs/git-rerere","author":"The Git Project","year":null}

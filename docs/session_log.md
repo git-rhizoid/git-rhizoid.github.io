@@ -340,3 +340,21 @@ Considered
 
 Rejected
 : Leaving the order in notes: the rank is a field now, so the next builder reads it rather than infers it.
+
+---
+
+
+<a id="2026-11-23-decisions-table-standard-tools"></a>
+### A decisions table, and its first row: the standard tools - drive, cut, or write
+
+Entry date
+: 2026-11-23
+
+Done
+: Added a decisions table to tables.toml (shaped like linux-phone-oco/docs' decisions; id in unique_ids) and recorded decision 2026-11-23-standard-tools-drive-cut-or-write on the author's direction of 2026-11-23, weighed by the rhizoid lane coordinator: drive the git CLI for worktree and rerere, drive git and the kernel's own tools rather than b4. Sources gitoxide, git2-rs and git-rerere added.
+
+Considered
+: Each tool three ways: drive the CLI, a rhizcut used as a library, our own.
+
+Rejected
+: Recording the decision as a session_log row only: a decision with what was rejected is its own table, as in linux-phone-oco/docs.

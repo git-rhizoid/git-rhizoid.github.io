@@ -165,3 +165,33 @@ Author
 
 Year
 : 2026
+
+
+<a id="gitoxide"></a>
+### gitoxide (gix): an idiomatic, pure Rust implementation of git
+
+Url
+: https://github.com/GitoxideLabs/gitoxide
+
+Author
+: Sebastian Thiel and contributors
+
+
+<a id="git2-rs"></a>
+### git2-rs: libgit2 bindings for Rust
+
+Url
+: https://github.com/rust-lang/git2-rs
+
+Author
+: The Rust Project Developers
+
+
+<a id="git-rerere"></a>
+### git-rerere - Reuse recorded resolution of conflicted merges
+
+Url
+: https://git-scm.com/docs/git-rerere
+
+Author
+: The Git Project
