@@ -180,10 +180,10 @@ Rank
 ### rhizoid follow lays a slice exactly as idealkb's bin/follow.sh does, proven by its fixtures, before update-pins calls it
 
 Status
-: open
+: done
 
 Note
-: Found 2026-11-18 by linux-phone-oco (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)). Passes grenudi/ideal-knowledge-base bin/test-follow.sh byte for byte and keeps three things its owner names: the pin names its source, one owner per file (check-one-owner), the followers' gate before a release (followers-answer.sh). Adds #! from = DIR/ and own needing an upstream item (idealkb items idealkb-slice-from-prefix, idealkb-own-needs-item) only after idealkb has them. Until it passes, the shell is the tool. Blocked by status-over-every-edge.
+: Found 2026-11-18 by linux-phone-oco (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)). Passes grenudi/ideal-knowledge-base bin/test-follow.sh byte for byte and keeps three things its owner names: the pin names its source, one owner per file (check-one-owner), the followers' gate before a release (followers-answer.sh). Adds #! from = DIR/ and own needing an upstream item (idealkb items idealkb-slice-from-prefix, idealkb-own-needs-item) only after idealkb has them. Until it passes, the shell is the tool. Blocked by status-over-every-edge. Done 2026-11-23: rhizoid v0.2.5 (git-rhizoid/rhizoid PR #25, release PR #26). rhizoid follow --source DIR BASE VERSION prints, writes and ends as idealkb's bin/follow.sh does: tests/follow_agrees.rs lays 13 scenarios with both and compares stdout, stderr, exit and tree byte for byte, and runs idealkb's own bin/test-follow.sh with its follow.sh handing over to rhizoid - all pass, in CI on every change against idealkb's main. A programmer review probed eleven more inputs where they differed (CRLF, own lists, a pin that is a generic file, deleted own files, remote URL forms, NULs, links); all are matched now. Parts on purpose, in rhizoid's README: a regex marker is refused, a failed write says rhizoid's words, bash's NUL warning is not printed. check-one-owner, slice-changed and followers-answer stay idealkb's (followers-answer calls follow.sh, so it keeps working whichever lays the files). Handing over - follow.sh exec-ing rhizoid, update-pins calling it - is idealkb's change, for its owner.
 
 Opened
 : 2026-11-18
