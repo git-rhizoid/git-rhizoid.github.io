@@ -29,3 +29,4 @@
 {"id":"g-20261123-061110","at":"2026-11-23T06:11:10Z","by":"git-rhizoid-builder","kind":"docs","summary":"cutting-as-cargo-dependency done: cut tags in v0.3.2; the ranked backlog done"}
 {"id":"g-20261123-075430","at":"2026-11-23T07:54:30Z","by":"mll","kind":"docs","summary":"The author's go on pins-stay-with-their-readers: no drift, no busy work is its test"}
 {"id":"g-20261123-082008","at":"2026-11-23T08:20:08Z","by":"mll","kind":"docs","summary":"Why pins drift: one pushed mover per pin, pin tables covered, own read as declared"}
+{"id":"g-20261123-082730","at":"2026-11-23T08:27:30Z","by":"mll","kind":"docs","summary":"One pin, one place: a pin-copies check; a tag means a change at the source"}
