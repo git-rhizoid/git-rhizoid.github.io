@@ -318,10 +318,10 @@ Rank
 ### The graph covers a pin table whole: a pinned key no edge covers is a finding
 
 Status
-: open
+: done
 
 Note
-: Decision 2026-11-23-every-pin-one-pushed-mover (3). [[pins]] names a follower's file and table (lab.toml [tools]; a Cargo.toml's git dependencies) and unpinned keys each with a why (tools.land and agent-env pin git revs; oco-work unknown). status pin-coverage: a key neither an edge nor unpinned is moved-by-hand, naming it. Proof: adding a key to a fixture's [tools] with no edge makes the finding; listing it unpinned with a why clears it.
+: Decision 2026-11-23-every-pin-one-pushed-mover (3). [[pins]] names a follower's file and table (lab.toml [tools]; a Cargo.toml's git dependencies) and unpinned keys each with a why (tools.land and agent-env pin git revs; oco-work unknown). status pin-coverage: a key neither an edge nor unpinned is moved-by-hand, naming it. Proof: adding a key to a fixture's [tools] with no edge makes the finding; listing it unpinned with a why clears it. Done in rhizoid v0.3.8 (PR #47): [[pins]] follower, file, table, git_only, unpinned; pin-coverage names every problem in one line (uncovered keys, unpinned names the table lacks or an edge covers); an empty why is refused at parse. On docs' graph with a [[pins]] for lab.toml [tools], unpinning land, agent-env and oco-work makes it current (lpoco and rhizoid by their edges). The same release makes bump now end 0 past a refusal for copies (decision 2026-11-23-every-pin-one-pushed-mover (7)).
 
 Opened
 : 2026-11-23
@@ -350,10 +350,10 @@ Rank
 ### pin-copies skips the files a follower marks as records with a git attribute
 
 Status
-: in-progress
+: done
 
 Note
-: The rhizoid lane coordinator, 2026-11-23, checking v0.3.5 on docs' graph: pin-copies counted history that names a version as copies (docs' research/base-graph/2026-11-18/measured.md for tad-v0.7.1; walleye's data/backlog.json and its rendered docs/backlog.md) - not a second pin, and back after every bump, the busy work the condition rules out. A follower marks its record paths in its own .gitattributes (data/** rhizoid-records); pin-copies skips any file git check-attr marks: an existing git mechanism, declared where the files live, no list in rhizoid or the graph. Ranked before pin-table-coverage. Proof: a fixture where a copy in a marked file is skipped and an unmarked copy is still found.
+: The rhizoid lane coordinator, 2026-11-23, checking v0.3.5 on docs' graph: pin-copies counted history that names a version as copies (docs' research/base-graph/2026-11-18/measured.md for tad-v0.7.1; walleye's data/backlog.json and its rendered docs/backlog.md) - not a second pin, and back after every bump, the busy work the condition rules out. A follower marks its record paths in its own .gitattributes (data/** rhizoid-records); pin-copies skips any file git check-attr marks: an existing git mechanism, declared where the files live, no list in rhizoid or the graph. Ranked before pin-table-coverage. Proof: a fixture where a copy in a marked file is skipped and an unmarked copy is still found. Done in rhizoid v0.3.7 (PR #45): Repos::marked reads git check-attr --source at the graph's revision (git 2.40+; a global attributes file never counts), its paths written beside the read so 5000 records never stall. Followers still have to add their .gitattributes lines.
 
 Opened
 : 2026-11-23
