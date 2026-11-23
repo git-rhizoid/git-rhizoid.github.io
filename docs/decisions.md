@@ -91,3 +91,25 @@ Rejected
 
 About
 : rhizoid assemble and rhizoid status
+
+
+<a id="2026-11-23-pins-stay-with-their-readers"></a>
+### 2026-11-23-pins-stay-with-their-readers
+
+Date
+: 2026-11-23
+
+Brief
+: Each pin stays in the file its reader reads (idealkb.toml for follow, lab.toml for lpoco-host, Cargo.toml for cargo); rhizoid bump lists them in one place rather than one file holding them all.
+
+Decision
+: No follower-wide pin file. A pin stays where the tool that uses it reads it: a slice's in its pin file (idealkb.toml, devicebase.toml), which follow reads and moves; a tool's in its key or line (lab.toml's tools.lpoco, a Cargo git tag), which its installer or cargo reads. The one place is rhizoid bump: every pin of the graph listed together, read where it lives, and moved there.
+
+Why
+: slice-consumption asked for one pin file the follower owns, for every kind. By the time it was built every kind had a reader that reads its own file - follow.sh and rhizoid follow, lpoco-host, cargo - and none of them reads a second file; a follower-wide file would hold each version twice, and the two would drift. rhizoid bump already gives what the one file was for: every pin seen together, and moved by one command.
+
+Rejected
+: A follower-wide pin file read by rhizoid (two places, one fact: the reader's file and rhizoid's would drift); a pin file that the readers are changed to read (it would bind lpoco-host and cargo and idealkb to rhizoid's format, for no gain over listing).
+
+About
+: slice-consumption, followers-one-pin-bump

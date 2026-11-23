@@ -23,3 +23,4 @@
 {"id":"g-20261123-045056","at":"2026-11-23T04:50:56Z","by":"git-rhizoid-builder","kind":"docs","summary":"rhizoid v0.2.2: send-back drafts, status asks origin and the releases source"}
 {"id":"g-20261123-050228","at":"2026-11-23T05:02:28Z","by":"git-rhizoid-builder","kind":"docs","summary":"followers-one-pin-bump done: rhizoid bump released in v0.2.3, with release binaries"}
 {"id":"g-20261123-052305","at":"2026-11-23T05:23:05Z","by":"git-rhizoid-builder","kind":"docs","summary":"follow-by-conformance done: rhizoid follow agrees with follow.sh byte for byte (v0.2.5)"}
+{"id":"g-20261123-053227","at":"2026-11-23T05:32:27Z","by":"git-rhizoid-builder","kind":"docs","summary":"slice-consumption done (v0.2.6); rhizcut designed; pins stay with their readers"}
