@@ -15,3 +15,4 @@
 {"id":"g-20261118-150749","at":"2026-11-18T15:07:49Z","by":"git-rhizoid-builder.b1c7f3","kind":"docs","summary":"git-rhizoid unparked: items ranked in the research's order, owner named"}
 {"id":"g-20261118-173932","at":"2026-11-18T17:39:32Z","by":"git-rhizoid-builder.b1c7f3","kind":"docs","summary":"status-over-every-edge done: rhizoid v0.1.0 released"}
 {"id":"g-20261119-004358","at":"2026-11-19T00:43:58Z","by":"git-rhizoid-builder.c2d8e1","kind":"chore","summary":"licences: CC-BY-SA-4.0 site and data, MIT OR Apache-2.0 scripts, CI check"}
+{"id":"g-20261123-033506","at":"2026-11-23T03:35:06Z","by":"git-rhizoid-builder","kind":"docs","summary":"decisions table; the standard tools: drive git for worktree and rerere, not b4"}

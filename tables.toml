@@ -71,6 +71,54 @@ name = "tags"
 type = "list"
 required = true
 
+# a decision with what was rejected, shaped like linux-phone-oco/docs' decisions (added 2026-11-23)
+[tables.decisions]
+key = ["id"]
+
+[[tables.decisions.fields]]
+name = "id"
+type = "string"
+required = true
+pattern = "^[a-z0-9]+(-[a-z0-9]+)*$"
+
+[[tables.decisions.fields]]
+name = "date"
+type = "date"
+required = true
+
+# the record in one line: what answers show
+[[tables.decisions.fields]]
+name = "brief"
+type = "string"
+required = true
+
+[[tables.decisions.fields]]
+name = "decision"
+type = "string"
+required = true
+
+[[tables.decisions.fields]]
+name = "why"
+type = "string"
+required = true
+
+[[tables.decisions.fields]]
+name = "rejected"
+type = "string"
+required = true
+
+[[tables.decisions.fields]]
+name = "about"
+type = "string"
+
+[[tables.decisions.fields]]
+name = "research"
+type = "string"
+
+[[tables.decisions.fields]]
+name = "supersedes"
+type = "string"
+
 [tables.relations]
 key = ["from_id", "to_id", "relation"]
 distinct = [["from_id", "to_id"]]
@@ -156,7 +204,7 @@ type = "integer"
 
 # Rules across tables (written by hand from the SQL checks they replaced; proven to give the same verdicts)
 [[rules.unique_ids]]
-tables = ["concepts", "backlog", "session_log"]
+tables = ["concepts", "backlog", "session_log", "decisions"]
 
 [[rules.references]]
 field = "relations.from_id"

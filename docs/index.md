@@ -4,5 +4,6 @@
 
 - [Backlog](backlog.md): 13
 - [Concepts](concepts.md): 14
-- [Session Log](session_log.md): 22
-- [Sources](sources.md): 12
+- [Decisions](decisions.md): 1
+- [Session Log](session_log.md): 23
+- [Sources](sources.md): 15
