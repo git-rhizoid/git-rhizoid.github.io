@@ -466,3 +466,21 @@ Considered
 
 Rejected
 : toml_edit (a line edit proven by parsing the whole file against the original with the one key set is enough, with no new dependency); slices (their files are laid by follow, rank 6).
+
+---
+
+
+<a id="2026-11-23-rhizoid-follow-by-conformance"></a>
+### rhizoid v0.2.5: follow lays a slice as idealkb's follow.sh does, byte for byte
+
+Entry date
+: 2026-11-23
+
+Done
+: Landed git-rhizoid/rhizoid PR #25 (rhizoid follow, backlog follow-by-conformance), released as v0.2.5 (PR #26); and before it PR #23, v0.2.4: a [[tool]] names in also what its gate may change (a Cargo.lock), committed with the pin. Sent orchestration the [[tool]] TOML for the attended pins (surya-lab procedures/steps, google-walleye-lab tools/walleye-tries) with value, gate (cargo check) and also, for docs' graph.
+
+Considered
+: Reimplementing diff -u; a regex engine for markers; a shell agreement script.
+
+Rejected
+: Reimplementing diff -u (rhizoid drives diff, as it drives git); a regex engine (markers are words; a regex one is refused, on purpose); a shell script (practice 21: the agreement is a Rust test, run in CI).
