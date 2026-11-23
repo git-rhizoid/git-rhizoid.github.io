@@ -399,3 +399,19 @@ Note
 
 Opened
 : 2026-11-23
+
+
+<a id="build-reference-edge"></a>
+### A [[reference]] edge: a fixed tag of a source read beside the work, checked by status, never merged or moved
+
+Status
+: open
+
+Note
+: Decision 2026-11-23-reference-edge. Fields repo, name, url, ref, commit, tag, why (depth optional); rhizoid check knows it. status reference check: current / behind (with the fetch command) / moved-by-hand; status --fetch fills a missing tag only. bump, update, send-back ignore it; assemble refuses a reference tag as base or entry; name-scheme accepts it. First users: walleye's Android kernel (reference/android-walleye/BUILD) in linux-phone-oco/linux, then surya's vendor kernel. Proof: fixtures for each status verdict, --fetch filling a missing tag and leaving a present one, assemble refusing a reference base; docs' graph with walleye's edge reads current on the lab once fetched.
+
+Opened
+: 2026-11-23
+
+Rank
+: 1
