@@ -610,3 +610,21 @@ Considered
 
 Rejected
 : Ignoring unknown fields: an old rhizoid could move a pin a newer field gives to another mover.
+
+---
+
+
+<a id="2026-11-23-rhizoid-v0-3-10"></a>
+### rhizoid v0.3.10: a failed gate is a draft pull request
+
+Entry date
+: 2026-11-23
+
+Done
+: v0.3.10 (PR #51, release PR #52), reviewed by the programmer subagent (prefix matching tightened to a release, a failed close ends the run 1, the body capped); the asset checked by sha256.
+
+Considered
+: Keep a failed gate as a red unit only; commit it as a draft pull request (chosen).
+
+Rejected
+: A red unit only: nobody who owns the follower sees it.

@@ -373,3 +373,16 @@ Note
 
 Opened
 : 2026-11-23
+
+
+<a id="gated-bump-draft-pr"></a>
+### A bump whose gate failed is a draft pull request the follower's people see
+
+Status
+: done
+
+Note
+: Decision 2026-11-23-every-pin-one-pushed-mover (8). Done in rhizoid v0.3.10 (PR #51): the draft's body holds the gate's argv, exit and its last 40 lines (each cut, indented); only a release follows a pin's branch prefix, so node never closes node-20's; a close that fails ends the run 1 (pin.N.replace_error); a pushed branch whose draft could not be opened waits for a hand. Proof: a fixture whose gate fails gets a draft carrying the gate output and nothing on main; a second run opens nothing; a newer release closes the old pull request and opens one.
+
+Opened
+: 2026-11-23

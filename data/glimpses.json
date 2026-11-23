@@ -34,3 +34,4 @@
 {"id":"g-20261123-085803","at":"2026-11-23T08:58:03Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.3-v0.3.6: ranks 1-4 done; pin-copies-skip-records opened"}
 {"id":"g-20261123-091522","at":"2026-11-23T09:15:22Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.7 and v0.3.8: records skipped, pin tables covered, exit past standing"}
 {"id":"g-20261123-092610","at":"2026-11-23T09:26:10Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.9: rhizoid check, a graph never lands ahead of its host"}
+{"id":"g-20261123-111255","at":"2026-11-23T11:12:55Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.10: a failed gate is a draft pull request"}
