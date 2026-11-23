@@ -520,3 +520,21 @@ Considered
 
 Rejected
 : As the decision says; origin by name (a clone's origin may be the upstream: the fork is found by its URL).
+
+---
+
+
+<a id="2026-11-23-rhizoid-v0-3-1-and-v0-3-2"></a>
+### rhizoid v0.3.1 and v0.3.2: integration cuttings track releases; cut tags for cuttings consumed by Cargo
+
+Entry date
+: 2026-11-23
+
+Done
+: v0.3.1 (PR #31): an integration cutting records tracks = its integration's releases source, and update pushes nothing for it, reporting status's topic-base. v0.3.2 (PR #33 quoted [patch."URL"] keys, PR #35 cut tags): backlog cutting-as-cargo-dependency done - the last of the ranked backlog.
+
+Considered
+: Semver precedence for cut tags; reading the clone's own tags.
+
+Rejected
+: Semver (it would sort a cut before its release); the clone's tags (a moved upstream tag would stop every update; rhizoid reads into refs/rhizoid/ instead).

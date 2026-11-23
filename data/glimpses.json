@@ -26,3 +26,4 @@
 {"id":"g-20261123-053227","at":"2026-11-23T05:32:27Z","by":"git-rhizoid-builder","kind":"docs","summary":"slice-consumption done (v0.2.6); rhizcut designed; pins stay with their readers"}
 {"id":"g-20261123-055121","at":"2026-11-23T05:51:21Z","by":"git-rhizoid-builder","kind":"docs","summary":"rhizcut done: v0.3.0, cuttings recorded in the graph"}
 {"id":"g-20261123-060054","at":"2026-11-23T06:00:54Z","by":"git-rhizoid-builder","kind":"docs","summary":"rank 9: what is left of cutting-as-cargo-dependency, and the choice it needs"}
+{"id":"g-20261123-061110","at":"2026-11-23T06:11:10Z","by":"git-rhizoid-builder","kind":"docs","summary":"cutting-as-cargo-dependency done: cut tags in v0.3.2; the ranked backlog done"}
