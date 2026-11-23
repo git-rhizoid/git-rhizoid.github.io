@@ -87,7 +87,7 @@ Status
 : open
 
 Note
-: Named by the milestone rhizoid-carries-ocoeco's criteria but never recorded: found 2026-11-12 when ocoeco check followed every link. The milestone is right to depend on it.
+: Named by the milestone rhizoid-carries-ocoeco's criteria but never recorded: found 2026-11-12 when ocoeco check followed every link. The milestone is right to depend on it. Design 2026-11-23 (git-rhizoid-builder, for the rhizoid lane coordinator; building waits for its read, the first real fork for the author's go): rhizcut is rhizoid's reserved verbs add, import, update, refresh and remove, built on concepts rhizoid-cutting, tracking-vs-patch-branch, clean-patch-back, fork-destination-manifest, module-metadata-file and auth-via-gh. (1) GitHub only behind GitHubPort (fork, merge_upstream, repo_exists, plus default_branch and open_pr when needed): one adapter, GhCli, drives gh (gh repo fork --org ORG --clone=false; gh api -X POST repos/FORK/merge-upstream -f branch=B; gh repo view --json), never a token of rhizoid's own; the core is tested with a fake port, the CLI with a fake gh on PATH and local bare repositories - no test touches GitHub. (2) A cutting has two branches: tracking (the upstream's branch, named in the manifest, default its default branch) moved only by merge-upstream, fast-forward, never committed to by hand; patch (rhizoid/patch, or the manifest's name) where every change lives, merged from tracking. .rhizoid/module.toml (origin, tracked_ref, last_synced_commit, added_as, attached_on) lives on the patch branch only, so tracking stays fast-forwardable and diff tracking...patch minus .rhizoid/ is the clean patch back. (3) Verbs, each listing what it would do and changing nothing unless given now (practice 8): add SOURCE now forks SOURCE into the org (manifest default or --org), makes the patch branch with module.toml from tracking, pushes it, records [[module]] in rhizoid.toml; import FORK now adopts an existing fork the same way (its upstream read from GitHub's parent); update [MODULE] now runs merge-upstream on tracking, then merges tracking into patch in a fresh worktree (a conflict stops it, names the paths, keeps nothing) and pushes; refresh [MODULE] reads what each fork is and says where the manifest and the forks differ, changing nothing; remove MODULE drops the manifest entry and never deletes a fork (deleting a GitHub repository stays a person's act). (4) Every outward step - a fork created, a branch pushed, merge-upstream - is printed before it is taken and only with now; the first real add waits for the author's go through the coordinator. (5) What follows rhizcut, not in it: status's fork-track already reads tracking against upstream; send-back of the clean patch as an upstream pull request reuses send-back; consuming a cutting as a cargo dependency is cutting-as-cargo-dependency (rank 9), whose pin is a bump [[tool]] key. Rejected: rhizoid's own GitHub token or API client (auth-via-gh: no credentials to keep); module.toml on the tracking branch (merge-upstream could no longer fast-forward); deleting forks in remove (irreversible, outward); a cutting without a patch branch (changes on tracking would conflict with upstream forever).
 
 Opened
 : 2026-11-12
@@ -100,10 +100,10 @@ Rank
 ### Consumption mode for a slice: take a named list of files from a pinned release of a repository into one that has its own files
 
 Status
-: open
+: done
 
 Note
-: Found 2026-11-17 by grenudi/ideal-knowledge-base (research chain-follow-world, decision 2026-11-17-chain-follow-by-slice). Its chain - idealkb to device-template to device bases - lays a slice, not a repository: a source names what it gives (a generic list, files whole or the part between two marker lines), a follower pins a release and names its own files, and the verdict says whether the follower changed a generic file (idealkb's bin/follow.sh ends 3). rhizoid today takes a whole fork (a cutting); this is the consumption side design-consumption-side leaves open. follow.sh and update-pins.sh are the prototype; when rhizoid has it, idealkb can hand its chain over. Also lacking for that chain: the pin read from the follower's own file, a release gate (every follower answers before a release is tagged), and sending a changed generic file back as a patch. Also 2026-11-17: the tools home (linux-phone-oco/lab-tools) has the same slice case for the device-template files that go with a tool - the [boot] manifest skeleton, hook examples, an initramfs skeleton - beside the tool's own version pin (see cutting-as-cargo-dependency, followers-one-pin-bump). Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word.
+: Found 2026-11-17 by grenudi/ideal-knowledge-base (research chain-follow-world, decision 2026-11-17-chain-follow-by-slice). Its chain - idealkb to device-template to device bases - lays a slice, not a repository: a source names what it gives (a generic list, files whole or the part between two marker lines), a follower pins a release and names its own files, and the verdict says whether the follower changed a generic file (idealkb's bin/follow.sh ends 3). rhizoid today takes a whole fork (a cutting); this is the consumption side design-consumption-side leaves open. follow.sh and update-pins.sh are the prototype; when rhizoid has it, idealkb can hand its chain over. Also lacking for that chain: the pin read from the follower's own file, a release gate (every follower answers before a release is tagged), and sending a changed generic file back as a patch. Also 2026-11-17: the tools home (linux-phone-oco/lab-tools) has the same slice case for the device-template files that go with a tool - the [boot] manifest skeleton, hook examples, an initramfs skeleton - beside the tool's own version pin (see cutting-as-cargo-dependency, followers-one-pin-bump). Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word. What is left, written 2026-11-23 against what follow (rank 6) does: laying a slice and reading the pin from the follower's own file are done by rhizoid follow; (a) a slice pin moved on a branch, gated like a tool, is bump now (built here); (b) one pin file the follower owns for every kind is not built - decision 2026-11-23-pins-stay-with-their-readers; the release gate stays idealkb's followers-answer.sh (it asks idealkb's queries); sending a changed generic file back as a patch is its own row, generic-file-back.
 
 Opened
 : 2026-11-17
@@ -232,6 +232,19 @@ Status
 
 Note
 : Only with the author's go (decision 2026-11-23-standard-tools-drive-cut-or-write): the first candidate for a cutting with wrapping code; until then rhizoid drives git worktree.
+
+Opened
+: 2026-11-23
+
+
+<a id="generic-file-back"></a>
+### Send a follower's changed generic file back to its source as a patch
+
+Status
+: open
+
+Note
+: Split from slice-consumption (2026-11-23): when follow ends 3, the follower changed a file its source gives; the change belongs upstream. Lacking: a verb that makes the follower's version of that file a branch of the source's clone (the release the follower pins as its base) and a pull request, never in the person's name by itself - the slice case of send-back, for single files and marked parts.
 
 Opened
 : 2026-11-23

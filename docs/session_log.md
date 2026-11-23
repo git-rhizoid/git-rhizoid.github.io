@@ -484,3 +484,21 @@ Considered
 
 Rejected
 : Reimplementing diff -u (rhizoid drives diff, as it drives git); a regex engine (markers are words; a regex one is refused, on purpose); a shell script (practice 21: the agreement is a Rust test, run in CI).
+
+---
+
+
+<a id="2026-11-23-slice-consumption-and-rhizcut-design"></a>
+### rhizoid v0.2.6: bump moves slice pins through follow; rhizcut designed, waiting for its read
+
+Entry date
+: 2026-11-23
+
+Done
+: Wrote slice-consumption's remainder against follow and built it: bump now moves a [[slice]] pin through rhizoid follow on a branch, gated (git-rhizoid/rhizoid PR #27, v0.2.6 by PR #28; a programmer review's five points fixed: the commit is what follow laid, nothing outside the follower, owner-repo branch names, the graph's pin proven moved). Recorded decision 2026-11-23-pins-stay-with-their-readers (no follower-wide pin file), split generic-file-back into its own row, and wrote rhizcut's design into its row for the coordinator's read before building.
+
+Considered
+: One pin file for every kind; building rhizcut before its design was read.
+
+Rejected
+: As the decision says; building first (rhizcut forks on GitHub: outward, the design goes first and the first real fork waits for the author).
