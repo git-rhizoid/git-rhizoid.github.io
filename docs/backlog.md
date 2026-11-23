@@ -270,10 +270,10 @@ Rank
 ### status reads a slice follower's own and [why] as declared
 
 Status
-: open
+: done
 
 Note
-: Decision 2026-11-23-every-pin-one-pushed-mover (4); idealkb decision 2026-11-23-own-files-read-as-declared, its item rhizoid-status-reads-own. An own file with a reason is current (a note when the release changed it, as follow says); upstream:ITEM stays a candidate; own with no [why] is a finding; an unlisted differing file is moved-by-hand. An own tables.toml is skipped whole, marked part included, as follow.sh does (lines 38-45 before 51). The names own and [why] come through the [[slice]] edge, not constants. Proof: status on docs' graph shows none of today's 13 lines for a declared file.
+: Decision 2026-11-23-every-pin-one-pushed-mover (4); idealkb decision 2026-11-23-own-files-read-as-declared, its item rhizoid-status-reads-own. Done in rhizoid v0.3.3 (PR #38): an own file differing from the source's at the pin is current when the pin file's [why] gives a reason (printed, with a note when a release since the pin changed it); upstream:ITEM stays a candidate; no reason stays moved-by-hand and says so. An own tables.toml reads the same where follow reads it as own (follow leaves an own file whole, marked part included); a part file follow would not read as own (follow reads a one-line own = [...], as follow.sh) is behind. The names come through the [[slice]] edge (own_key, why_key; defaults own and why). Proof: status on docs' graph at origin/main went from 13 moved-by-hand own lines (v0.3.2) to 0 (v0.3.3, all 13 current, declared).
 
 Opened
 : 2026-11-23

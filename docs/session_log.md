@@ -556,3 +556,21 @@ Considered
 
 Rejected
 : See decision 2026-11-23-every-pin-one-pushed-mover.
+
+---
+
+
+<a id="2026-11-23-rhizoid-v0-3-3"></a>
+### rhizoid v0.3.3: a moved tag is a tag-origin finding; status reads own files as declared
+
+Entry date
+: 2026-11-23
+
+Done
+: v0.3.3 (PR #36, PR #38, release PR #37). Orchestration's bug: bump --fetch stopped with an empty error when git refused to clobber a stale local tag (sxmo-utils-v1.18.1_p20261118 in lab-tools). Tags are now fetched with --porcelain and never forced; each refused tag is moved-by-hand tag-origin (tag, object here, origin's) and the fetch and report go on; every failed git call names the command and git's words (stdout when stderr is empty); --fetch needs git 2.41. Then status-reads-own: a reason in [why] makes a differing own file current; docs' graph went from 13 moved-by-hand own lines to 0. Both reviewed by the programmer subagent; the release asset checked by sha256.
+
+Considered
+: For a moved tag: fetch --force (rejected below); skip tags; turn each refused tag into a finding (chosen). For an own tables.toml's part: hide it whenever tables.toml is own; read it as declared only where follow leaves it whole (chosen, status agrees with follow).
+
+Rejected
+: fetch --force for tags: local tags are kept on purpose (assembled int/ tags are made locally) and a silent clobber would hide drift. Reading own with own_key in follow: follow is follow.sh's port byte for byte, so status asks how follow reads own instead.
