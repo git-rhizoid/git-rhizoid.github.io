@@ -32,3 +32,4 @@
 {"id":"g-20261123-082730","at":"2026-11-23T08:27:30Z","by":"mll","kind":"docs","summary":"One pin, one place: a pin-copies check; a tag means a change at the source"}
 {"id":"g-20261123-083425","at":"2026-11-23T08:34:25Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.3: moved tags are findings; status reads own files as declared"}
 {"id":"g-20261123-085803","at":"2026-11-23T08:58:03Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.3-v0.3.6: ranks 1-4 done; pin-copies-skip-records opened"}
+{"id":"g-20261123-091522","at":"2026-11-23T09:15:22Z","by":"mll","kind":"docs","summary":"rhizoid v0.3.7 and v0.3.8: records skipped, pin tables covered, exit past standing"}

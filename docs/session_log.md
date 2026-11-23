@@ -574,3 +574,21 @@ Considered
 
 Rejected
 : fetch --force for tags: local tags are kept on purpose (assembled int/ tags are made locally) and a silent clobber would hide drift. Reading own with own_key in follow: follow is follow.sh's port byte for byte, so status asks how follow reads own instead.
+
+---
+
+
+<a id="2026-11-23-rhizoid-v0-3-4-to-v0-3-8"></a>
+### rhizoid v0.3.4 to v0.3.8: one pushed mover per pin
+
+Entry date
+: 2026-11-23
+
+Done
+: The ranked backlog under decision 2026-11-23-every-pin-one-pushed-mover, each reviewed by the programmer subagent and released with its asset checked: v0.3.4 moved_by on edges (PR #39); v0.3.5 pin-copies, whole tag names only (PR #41); v0.3.6 bump now --land and the hourly user timer (PR #43); v0.3.7 pin-copies skips rhizoid-records files (PR #45); v0.3.8 [[pins]] table coverage and bump now ending 0 past a standing refusal (PR #47). On docs' graph pin-copies found the real copies (walleye's procedures and CI, surya's procedures/attended-session.rs).
+
+Considered
+: For records counted as copies: a skip list in the graph, or in rhizoid; a git attribute declared by the follower (chosen). For the hourly unit's exit: fail on any refusal; pass on a standing one status reports (chosen).
+
+Rejected
+: A list of record paths in rhizoid or the graph: it would live away from the files it describes. Failing the unit for a known standing finding: a red unit every hour hides a real failure.
