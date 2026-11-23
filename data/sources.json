@@ -13,3 +13,10 @@
 {"id":"gitoxide","title":"gitoxide (gix): an idiomatic, pure Rust implementation of git","url":"https://github.com/GitoxideLabs/gitoxide","author":"Sebastian Thiel and contributors","year":null}
 {"id":"git2-rs","title":"git2-rs: libgit2 bindings for Rust","url":"https://github.com/rust-lang/git2-rs","author":"The Rust Project Developers","year":null}
 {"id":"git-rerere","title":"git-rerere - Reuse recorded resolution of conflicted merges","url":"https://git-scm.com/docs/git-rerere","author":"The Git Project","year":null}
+{"id":"renovate-automerge","title":"Renovate docs: Automerge configuration and troubleshooting","url":"https://docs.renovatebot.com/key-concepts/automerge/","author":"Mend Renovate","year":null}
+{"id":"renovate-scheduling","title":"Renovate docs: Scheduling","url":"https://docs.renovatebot.com/key-concepts/scheduling/","author":"Mend Renovate","year":null}
+{"id":"renovate-managers","title":"Renovate docs: Managers (dependency discovery from files)","url":"https://docs.renovatebot.com/modules/manager/","author":"Mend Renovate","year":null}
+{"id":"dependabot-options","title":"Dependabot options reference (schedule.interval, package-ecosystem)","url":"https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference","author":"GitHub","year":null}
+{"id":"update-flake-lock","title":"update-flake-lock: a GitHub Action that runs nix flake update on a schedule and opens a PR","url":"https://github.com/DeterminateSystems/update-flake-lock","author":"Determinate Systems","year":null}
+{"id":"lpoco-host-follows-releases","title":"linux-phone-oco decision 2026-11-19-host-follows-releases (the lab host follows releases and lands its own pin)","url":"https://github.com/linux-phone-oco/docs/blob/main/data/decisions.json","author":"linux-phone-oco orchestration","year":null}
+{"id":"idealkb-own-files-read-as-declared","title":"ideal-knowledge-base decision 2026-11-23-own-files-read-as-declared (PR 108)","url":"https://github.com/grenudi/ideal-knowledge-base/blob/main/data/decisions.json","author":"ideal-knowledge-base","year":null}

@@ -10,3 +10,10 @@
 {"concept_id":"manifest-file-format","source_id":"yaml-document-from-hell"}
 {"concept_id":"manifest-file-format","source_id":"wrangler-toml-to-jsonc"}
 {"concept_id":"argenv-is-flags-and-env-only","source_id":"argenv-repo"}
+{"concept_id":"one-pushed-mover-per-pin","source_id":"renovate-automerge"}
+{"concept_id":"one-pushed-mover-per-pin","source_id":"renovate-scheduling"}
+{"concept_id":"one-pushed-mover-per-pin","source_id":"renovate-managers"}
+{"concept_id":"one-pushed-mover-per-pin","source_id":"dependabot-options"}
+{"concept_id":"one-pushed-mover-per-pin","source_id":"update-flake-lock"}
+{"concept_id":"one-pushed-mover-per-pin","source_id":"lpoco-host-follows-releases"}
+{"concept_id":"one-pushed-mover-per-pin","source_id":"idealkb-own-files-read-as-declared"}
