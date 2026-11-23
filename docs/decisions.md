@@ -113,3 +113,28 @@ Rejected
 
 About
 : slice-consumption, followers-one-pin-bump
+
+
+<a id="2026-11-23-cuttings-live-in-the-graph"></a>
+### 2026-11-23-cuttings-live-in-the-graph
+
+Date
+: 2026-11-23
+
+Brief
+: A cutting is recorded in the repository graph, as its [[fork]] edge with patches and added; rhizoid.toml, its manifest and init are retired.
+
+Decision
+: The repository graph is the one record of a cutting: its [[fork]] edge (fork, upstream, tracking branch, upstream branch) also says patches - one branch, rhizoid/patch unless named, or integration, the topics the repository's [[integration]] edge assembles - and added (add or import); the graph may name fork_org, where add forks to. rhizoid.toml, its [[module]] manifest and rhizoid init are retired; graphs of v0.2.x read unchanged, their [[fork]] edges forks and not yet cuttings. .rhizoid/module.toml stays on a one-branch cutting's patch branch, the fork's own record; an integration cutting has none.
+
+Why
+: The rhizoid lane coordinator (2026-11-23), reading rhizcut's design: the graph already says fork -> upstream ([[fork]] edges; linux-phone-oco/docs decision 2026-11-23-structure-git-flows-run-on-rhizoid; docs' rhizoid.graph.toml), so a rhizoid.toml [[module]] list would say the same fact twice. And the first real cuttings (linux-phone-oco/linux, sxmo-utils) keep their changes as topic branches assembled by an [[integration]] edge, never on one patch branch.
+
+Rejected
+: Two files, rhizoid.toml beside the graph (one fact in two places, which drift); one patch branch for every cutting (a kernel's changes are topics, assembled by the integration edge); a .rhizoid/module.toml required in every fork (an integration cutting pushes nothing to its fork).
+
+About
+: rhizcut
+
+Supersedes
+: concepts manifest-file-format and fork-destination-manifest, for where a cutting is recorded

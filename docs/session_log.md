@@ -502,3 +502,21 @@ Considered
 
 Rejected
 : As the decision says; building first (rhizcut forks on GitHub: outward, the design goes first and the first real fork waits for the author).
+
+---
+
+
+<a id="2026-11-23-rhizcut-released"></a>
+### rhizoid v0.3.0: rhizcut takes and keeps cuttings, recorded in the graph
+
+Entry date
+: 2026-11-23
+
+Done
+: Built rank 8 (rhizcut) as designed and read by the coordinator: add, import, update, refresh, remove on the graph's [[fork]] edges; GitHub only through GitHubPort's one adapter, gh; every verb a plan, outward steps marked, nothing done without now. Released as v0.3.0 (breaking: init and rhizoid.toml retired). Ran import's dry runs for linux-phone-oco/linux and sxmo-utils against docs' graph, for the author's go through the coordinator.
+
+Considered
+: Keeping rhizoid.toml beside the graph; pushing to origin by name.
+
+Rejected
+: As the decision says; origin by name (a clone's origin may be the upstream: the fork is found by its URL).
