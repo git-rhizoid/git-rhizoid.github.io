@@ -360,3 +360,16 @@ Opened
 
 Rank
 : 4
+
+
+<a id="graph-check-verb"></a>
+### rhizoid check --graph: whether this version can read a graph, so a graph never lands ahead of its host
+
+Status
+: done
+
+Note
+: The rhizoid lane coordinator, 2026-11-23: docs' graph gained [[pins]] and the lab host's rhizoid 0.3.6 refused it (unknown field pins); the hourly timer would have broken had the graph landed first. Decided: keep refusing unknown fields (an old rhizoid that ignored one could move a pin it does not own) and add a parse-only verb. Done in rhizoid v0.3.9 (PR #49): rhizoid check [--graph FILE], declared through argenv, reads and checks every edge, moved_by, [[pins]] and [bump] with no clones and no network; 0 with readable=yes and the edges counted, 2 naming a field this version does not know. docs' CI runs it with the version lab.toml pins - from v0.3.9 on, since older versions have no check verb. Proof: an unknown field (top-level or in an edge) and bad values exit 2 naming them; docs' graph at origin/main passes.
+
+Opened
+: 2026-11-23

@@ -592,3 +592,21 @@ Considered
 
 Rejected
 : A list of record paths in rhizoid or the graph: it would live away from the files it describes. Failing the unit for a known standing finding: a red unit every hour hides a real failure.
+
+---
+
+
+<a id="2026-11-23-rhizoid-v0-3-9"></a>
+### rhizoid v0.3.9: rhizoid check, a graph never lands ahead of its host
+
+Entry date
+: 2026-11-23
+
+Done
+: v0.3.9 (PR #49, release PR #50): rhizoid check --graph, a parse-only verb; reviewed by the programmer subagent (every graph-only refusal lives in Graph::parse, so check refuses what status and bump would); the asset checked by sha256, and it reads docs' graph.
+
+Considered
+: Ignore unknown fields so an old rhizoid reads a newer graph; refuse them and give CI a way to ask first (chosen).
+
+Rejected
+: Ignoring unknown fields: an old rhizoid could move a pin a newer field gives to another mover.
