@@ -376,3 +376,21 @@ Considered
 
 Rejected
 : As in the two decisions' rejected fields.
+
+---
+
+
+<a id="2026-11-23-rhizoid-assemble-released"></a>
+### rhizoid assemble released in v0.1.1
+
+Entry date
+: 2026-11-23
+
+Done
+: Built backlog assemble-from-list in git-rhizoid/rhizoid (PR #12, released as v0.1.1 by PR #10): rhizoid assemble LIST reads a lab's list file, which rhizoid owns (examples/topics.toml), and merges the list onto its base in a fresh locked worktree under AGENT_WORKTREES/REPO/rhizoid, with git's shared rerere. It stops at a conflict and names the earlier entries that changed the same paths. It tags int/DEVICE/LIST/BASE/N with the recipe; --reproduces compares the trees and --fetch prunes. Git is driven through GitPort (decision 2026-11-23-standard-tools-drive-cut-or-write). A programmer review before landing found seven points; all were fixed before the merge.
+
+Considered
+: Persisting rerere.autoUpdate in the clone's config; refusing a local branch behind origin's.
+
+Rejected
+: autoUpdate in the clone's config (it would stage rerere's replays in a person's own merges; rhizoid passes it per run); refusing stale local branches (unpushed local work is common on a kernel clone; the recipe names the sha that went in, and the README says so).
