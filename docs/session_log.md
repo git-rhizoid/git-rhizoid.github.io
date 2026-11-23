@@ -358,3 +358,21 @@ Considered
 
 Rejected
 : Recording the decision as a session_log row only: a decision with what was rejected is its own table, as in linux-phone-oco/docs.
+
+---
+
+
+<a id="2026-11-23-structure-flows-on-rhizoid"></a>
+### The structure's git flows run on rhizoid: assemble and kernel status ranked first
+
+Entry date
+: 2026-11-23
+
+Done
+: Landed the needs agreed by the rhizoid lane coordinator with the Steward, after linux-phone-oco/docs decision 2026-11-23-structure-git-flows-run-on-rhizoid: decisions 2026-11-23-rhizoid-carries-the-structure-git-flows and 2026-11-23-structure-flows-ranked-first; new backlog rows assemble-from-list (rank 2), status-over-kernel-edges (rank 3), gix-worktree-add-upstream (unranked); send-back-writes-the-upstream-item (4) and followers-one-pin-bump (5) reshaped, their old text kept; follow-by-conformance, slice-consumption, rhizcut, cutting-as-cargo-dependency re-ranked 6-9. Data only; no code until the coordinator relays that work may resume.
+
+Considered
+: The unpark order of 2026-11-18; the merge loop kept in lab-tools.
+
+Rejected
+: As in the two decisions' rejected fields.
