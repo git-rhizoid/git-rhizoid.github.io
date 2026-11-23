@@ -25,3 +25,4 @@
 {"id":"g-20261123-052305","at":"2026-11-23T05:23:05Z","by":"git-rhizoid-builder","kind":"docs","summary":"follow-by-conformance done: rhizoid follow agrees with follow.sh byte for byte (v0.2.5)"}
 {"id":"g-20261123-053227","at":"2026-11-23T05:32:27Z","by":"git-rhizoid-builder","kind":"docs","summary":"slice-consumption done (v0.2.6); rhizcut designed; pins stay with their readers"}
 {"id":"g-20261123-055121","at":"2026-11-23T05:51:21Z","by":"git-rhizoid-builder","kind":"docs","summary":"rhizcut done: v0.3.0, cuttings recorded in the graph"}
+{"id":"g-20261123-060054","at":"2026-11-23T06:00:54Z","by":"git-rhizoid-builder","kind":"docs","summary":"rank 9: what is left of cutting-as-cargo-dependency, and the choice it needs"}
