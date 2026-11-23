@@ -93,7 +93,7 @@ Opened
 : 2026-11-12
 
 Rank
-: 6
+: 8
 
 
 <a id="slice-consumption"></a>
@@ -109,7 +109,7 @@ Opened
 : 2026-11-17
 
 Rank
-: 3
+: 7
 
 
 <a id="cutting-as-cargo-dependency"></a>
@@ -125,7 +125,7 @@ Opened
 : 2026-11-17
 
 Rank
-: 7
+: 9
 
 
 <a id="followers-one-pin-bump"></a>
@@ -135,13 +135,13 @@ Status
 : open
 
 Note
-: Found 2026-11-17 by linux-phone-oco/docs (same research). A device repository follows three sources - idealkb (a slice), device-template (a slice) and lab-tools (a tool version, maybe a cutting) - each with its own pin line, and today an updater (idealkb's update-pins.sh) only for the slices. Lacking: one pin file the follower owns (source, kind slice|cutting|tool, release), one command that bumps every pin to the newest release and opens a pull request per source, and one verdict (up to date, behind, own change to a generic file) that CI can gate on. update-pins.sh and follow.sh's exit 3 are the prototype; slice-consumption is the first kind. Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word.
+: Found 2026-11-17 by linux-phone-oco/docs (same research). A device repository follows three sources - idealkb (a slice), device-template (a slice) and lab-tools (a tool version, maybe a cutting) - each with its own pin line, and today an updater (idealkb's update-pins.sh) only for the slices. Lacking: one pin file the follower owns (source, kind slice|cutting|tool, release), one command that bumps every pin to the newest release and opens a pull request per source, and one verdict (up to date, behind, own change to a generic file) that CI can gate on. update-pins.sh and follow.sh's exit 3 are the prototype; slice-consumption is the first kind. Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word. Reshaped 2026-11-23 (decisions 2026-11-23-rhizoid-carries-the-structure-git-flows, 2026-11-23-structure-flows-ranked-first; linux-phone-oco/docs decision 2026-11-23-structure-git-flows-run-on-rhizoid): every pin's status in one place (lab.toml lpoco, idealkb.toml, device-template slices, procedures' lpoco-attended pins); repo-only bumps as pull requests; a gated bump (--gate CMD, e.g. lpoco-attended check) for attended pins; lab.toml lpoco: rhizoid bumps the pin, lpoco-host follow installs. Not Renovate.
 
 Opened
 : 2026-11-17
 
 Rank
-: 4
+: 5
 
 
 <a id="send-back-writes-the-upstream-item"></a>
@@ -151,13 +151,13 @@ Status
 : open
 
 Note
-: Found 2026-11-17 by linux-phone-oco/docs (same research). clean-patch-back says a diff of the patch branch against the pristine tracking branch is a clean patch; the CLI that makes it and opens the pull request is stubbed. The follower's bases keep an upstream item per change (idealkb: ikb upstream-item, form patch, draft, ready on the person's word, sent with the PR address, landed when released). Lacking: a rhizoid verb that, for a changed generic file or a patch branch, writes the patch, opens the pull request only after the person says ready, and returns the PR address and later the release that carried it, in a form the follower's record command takes - without rhizoid knowing that base's tables. It never sends in the person's name by itself. Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word.
+: Found 2026-11-17 by linux-phone-oco/docs (same research). clean-patch-back says a diff of the patch branch against the pristine tracking branch is a clean patch; the CLI that makes it and opens the pull request is stubbed. The follower's bases keep an upstream item per change (idealkb: ikb upstream-item, form patch, draft, ready on the person's word, sent with the PR address, landed when released). Lacking: a rhizoid verb that, for a changed generic file or a patch branch, writes the patch, opens the pull request only after the person says ready, and returns the PR address and later the release that carried it, in a form the follower's record command takes - without rhizoid knowing that base's tables. It never sends in the person's name by itself. Reshaped 2026-11-18 (docs research base-graph-measured, base-graph-world; decision 2026-11-18-device-layer-from-docs; upstream item rhizoid-scope-every-edge (linux-phone-oco/docs)): rhizoid's scope is the follow tool for every edge (slice, tool pin, cutting), built in order status-over-every-edge, follow-by-conformance, send-back, cuttings; each replaces shell only once it passes the shell's tests. Unparking implement-cli waits on the author's word. Reshaped 2026-11-23 (decisions 2026-11-23-rhizoid-carries-the-structure-git-flows, 2026-11-23-structure-flows-ranked-first; linux-phone-oco/docs decision 2026-11-23-structure-git-flows-run-on-rhizoid): rebase topic/ITEM onto the target tree onto send/ITEM/vN (stop naming the commit at a conflict); format-patch --cover-letter -vN --base into the folder given (upstream/LIST/ITEM/vN-draft/); range-diff vs topic/ITEM/vN-1; a changelog skeleton from it; --base and the tested commit (passed in, never guessed) for SEND-NOTES; get_maintainer.pl recipients; checkpatch --strict stops it (a missing SoB and an unresolvable Fixes listed, not hidden); W=1 / dt-check as a check command by exit code. Out: signing, re-authoring, send-email, pushing, lore, b4, claims in the cover letter.
 
 Opened
 : 2026-11-17
 
 Rank
-: 5
+: 4
 
 
 <a id="status-over-every-edge"></a>
@@ -189,4 +189,49 @@ Opened
 : 2026-11-18
 
 Rank
+: 6
+
+
+<a id="assemble-from-list"></a>
+### rhizoid assemble: a named list of branches merged onto a fresh base in a worktree, rerere shared, stopped at a conflict naming both, tagged int/DEVICE/LIST/BASE/N
+
+Status
+: open
+
+Note
+: List format owned by rhizoid (TOML; named lists [lists.NAME]; base a tag or a fork commit; entries in order, each a topic/ITEM or backport/ITEM/BASE branch with for and state = known-good (test_run, tested_commit) or trying); a fresh worktree each time in the home, git merge with rerere.enabled + autoUpdate; at a conflict it stops and names the entry and the earlier entry that touched the same paths; an annotated tag with the base and every sha; --reproduces COMMIT compares TAG^{tree} with the commit's tree (surya: 29d92793b); several assembled worktrees alive at once, locked while wanted (walleye); output key=value and --json for the caller's record command (fields: ikb's answer pending). Proof: a fixture repository - two topics assemble to a tag holding both; a conflict stops naming both; reproduces says equal and says which paths differ; a worktree outside the home is refused. Decisions 2026-11-23-rhizoid-carries-the-structure-git-flows, 2026-11-23-standard-tools-drive-cut-or-write; linux-phone-oco/docs decision 2026-11-23-structure-git-flows-run-on-rhizoid.
+
+Opened
+: 2026-11-23
+
+Rank
 : 2
+
+
+<a id="status-over-kernel-edges"></a>
+### rhizoid status over topic, backport, int and fork edges
+
+Status
+: open
+
+Note
+: A topic's base vs the newest upstream tag; an int tag's recipe read back from its message; commits on int/ not made by assemble; a branch outside the scheme (the scheme as data in the graph file: topic/ITEM, backport/ITEM/BASE, wip/LANE/WHAT, int/DEVICE/LIST; tags topic/ITEM/vN, int/DEVICE/LIST/BASE/N, archive/NAME); an assembled worktree whose tree differs from its tag; fork -> upstream from the graph (linux, sxmo-utils); --fetch fetches with --prune. Unknowns shown as not known yet. From the Steward's point 4 and walleye. Decision 2026-11-23-rhizoid-carries-the-structure-git-flows; linux-phone-oco/docs decision 2026-11-23-structure-git-flows-run-on-rhizoid.
+
+Opened
+: 2026-11-23
+
+Rank
+: 3
+
+
+<a id="gix-worktree-add-upstream"></a>
+### Offer gitoxide worktree add/lock as an upstream pull request
+
+Status
+: open
+
+Note
+: Only with the author's go (decision 2026-11-23-standard-tools-drive-cut-or-write): the first candidate for a cutting with wrapping code; until then rhizoid drives git worktree.
+
+Opened
+: 2026-11-23

@@ -22,3 +22,50 @@ Rejected
 
 About
 : rhizoid's kernel flows for linux-phone-oco: assembling test kernels from topic branches, topic and fork status, cutting series versions for upstream
+
+
+<a id="2026-11-23-rhizoid-carries-the-structure-git-flows"></a>
+### 2026-11-23-rhizoid-carries-the-structure-git-flows
+
+Date
+: 2026-11-23
+
+Brief
+: rhizoid carries the git work of linux-phone-oco's structure, generic: assemble, status over kernel edges, send-back, fork to upstream in its graph file.
+
+Decision
+: rhizoid carries the git work of linux-phone-oco's structure, generic (no tad, no phones): assemble (list -> int/ tag), status over topic, backport, int and fork edges, send-back (series version; never signs, sends or pushes), fork -> upstream in its graph file. It owns the list format; each lab owns its file. Callers keep their record checks (lab-tools: upstream-item row, FROMLIST). Worktrees at ${AGENT_WORKTREES:-~/.local/share/agent-worktrees}/REPO/rhizoid/NAME, held with git worktree lock, never elsewhere.
+
+Why
+: The author asked (2026-11-23) that the git flows run on rhizoid; rhizoid's cutting, tracking-vs-patch and clean-patch-back are that layout; the roles' answers in the rhizoid lane's needs draft (walleye, surya, upstreams, ideal-agent, orchestration); linux-phone-oco/docs decision 2026-11-23-structure-git-flows-run-on-rhizoid.
+
+Rejected
+: The merge loop in lab-tools (a second git tool); rhizoid reading tad records (it stays generic and prints what a record command takes); forks in lab.toml [clones] (two places, one fact); worktrees via agent-env's branch (a shell function, not callable from a program); lab-only dts laid in by rhizoid (the tree must equal its tag; the build script keeps them).
+
+About
+: linux-phone-oco's git flows: kernel topics, integration and sending upstream
+
+
+<a id="2026-11-23-structure-flows-ranked-first"></a>
+### 2026-11-23-structure-flows-ranked-first
+
+Date
+: 2026-11-23
+
+Brief
+: The backlog order becomes assemble, status over kernel edges, send-back, pins in one place, then follow, slice-consumption, rhizcut, cutting-as-cargo-dependency.
+
+Decision
+: The order becomes: assemble (assemble-from-list), status over kernel edges (status-over-kernel-edges), send-back (send-back-writes-the-upstream-item), pins in one place (followers-one-pin-bump), then follow-by-conformance, slice-consumption, rhizcut, cutting-as-cargo-dependency - the backlog's rank 2 to 9.
+
+Why
+: Phone lanes wait on assemble and status; the author (2026-11-23): when walleye resumes "depends on what quality we can acheive with git-rhizoid". send-back's need is now concrete (the upstreams lane's answer). Rests on decision 2026-11-23-rhizoid-carries-the-structure-git-flows and linux-phone-oco/docs decision 2026-11-23-structure-git-flows-run-on-rhizoid.
+
+Rejected
+: Keeping the unpark order of 2026-11-18 (status, follow, send-back, cuttings): follow serves idealkb's slices, which have a working shell today; the kernel flows have no tool.
+
+About
+: the backlog's rank
+
+Supersedes
+: the order of session_log 2026-11-18-unparked-by-the-authors-yes
