@@ -448,3 +448,21 @@ Considered
 
 Rejected
 : --sent now (marking a version sent stays the author's one manual step until he wants it); local-only topics as drift (unpushed work is normal; status names them without failing).
+
+---
+
+
+<a id="2026-11-23-rhizoid-bump-and-release-binary"></a>
+### rhizoid v0.2.3: bump keeps every pin in one place; every release carries its binary
+
+Entry date
+: 2026-11-23
+
+Done
+: Landed git-rhizoid/rhizoid PR #20 (assets.yml: the x86_64 Linux binary and its sha256 attached to every release, as lab-tools does; dispatched for v0.2.2 and checked by download, sha256 -c and a run) and PR #22 (rhizoid bump, backlog followers-one-pin-bump), released as v0.2.3 (PR #21). A programmer review found eight points, all fixed: a pushed branch survives a failed pull request; one pin's error is its row's; the commit is the pin alone; the edit proves nothing else moved; --push and --pr need now.
+
+Considered
+: toml_edit for key pins; bumping slices too.
+
+Rejected
+: toml_edit (a line edit proven by parsing the whole file against the original with the one key set is enough, with no new dependency); slices (their files are laid by follow, rank 6).
