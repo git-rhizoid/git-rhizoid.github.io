@@ -640,3 +640,15 @@ Entry date
 
 Done
 : v0.3.11 (PR #53, release PR #54), reviewed by the programmer subagent (a lone carriage return, a huge line and a small budget kept in bounds, the gate's argv capped); the asset checked by sha256.
+
+---
+
+
+<a id="2026-11-23-rhizoid-v0-3-12"></a>
+### rhizoid v0.3.12: the bump unit's PATH has ~/.cargo/bin
+
+Entry date
+: 2026-11-23
+
+Done
+: v0.3.12 (PR #55, release PR #56). The coordinator found the 12:04 and 13:00 gate failures: under rhizoid-bump.service lab-tools' attended tests panicked with rust-script NotFound, the unit's PATH having no ~/.cargo/bin (fixed meanwhile in the lab's bump.env). The shipped unit now sets PATH=%h/.cargo/bin:%h/.local/bin:/usr/local/bin:/usr/bin:/bin, and the README says a gate runs with the unit's PATH, not a login shell's. Pages: release asset present on v0.3.12; unit read back from main.
