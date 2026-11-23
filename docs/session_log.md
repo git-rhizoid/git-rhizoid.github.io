@@ -412,3 +412,21 @@ Considered
 
 Rejected
 : As in decision 2026-11-23-rhizoid-stays-general; flagging stale local branches in status (branch-origin) rather than refusing them in assemble, since unpushed local work is common.
+
+---
+
+
+<a id="2026-11-23-rhizoid-send-back-released"></a>
+### rhizoid send-back released in v0.2.1
+
+Entry date
+: 2026-11-23
+
+Done
+: Built backlog send-back-writes-the-upstream-item in git-rhizoid/rhizoid (PR #15, released as v0.2.1 by PR #16), general like assemble: send and tag names, checks and recipients are rhizoid's config, the kernel's are an example. A programmer review before landing found seven points, all fixed: a run that cannot finish keeps nothing; no other branch moves; an empty series is refused; dropped commits are counted; a person's format.* config does not reach the series; the recipients command's failure fails the run.
+
+Considered
+: Running checks through a shell; leaving a conflicted send worktree for a hand; a built-in list of checkpatch exceptions.
+
+Rejected
+: A shell (argv only: a config is not a script); keeping a conflicted send branch (the fix belongs on the topic branch, so nothing is kept); built-in exceptions (they are the check's own arguments, in config).
