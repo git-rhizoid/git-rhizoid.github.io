@@ -254,10 +254,10 @@ Opened
 ### A failed git call names git's error; a local tag that differs from origin's is a finding, not a stop
 
 Status
-: open
+: done
 
 Note
-: Orchestration, 2026-11-23: bump --fetch on lab-tools' clone stopped with an empty error; git had refused the stale local tag sxmo-utils-v1.18.1_p20261118 (would clobber existing tag). Every git failure prints its command and stderr (status, assemble, bump). A tag the clone holds differently from origin is moved-by-hand naming both shas, and the run goes on. No fetch --force: local tags (assembled int/ tags) stay. Proof: a fixture clone with a local tag differing from origin's.
+: Orchestration, 2026-11-23: bump --fetch on lab-tools' clone stopped with an empty error; git had refused the stale local tag sxmo-utils-v1.18.1_p20261118 (would clobber existing tag). Every git failure prints its command and stderr (status, assemble, bump). A tag the clone holds differently from origin is moved-by-hand naming both shas, and the run goes on. No fetch --force: local tags (assembled int/ tags) stay. Proof: a fixture clone with a local tag differing from origin's. Done in rhizoid v0.3.3 (PR #36): every failed git call names its command and git's words (stdout when stderr is empty); a refused tag is moved-by-hand tag-origin; --fetch needs git 2.41.
 
 Opened
 : 2026-11-23
@@ -286,10 +286,10 @@ Rank
 ### Each pin's one mover is named on its edge (moved_by); bump now moves only rhizoid-bump's
 
 Status
-: open
+: done
 
 Note
-: Decision 2026-11-23-every-pin-one-pushed-mover (1). moved_by on [[tool]] and [[slice]], default rhizoid-bump; bump lists every pin with pin.N.moved_by and skips the others under now. docs' graph then names idealkb-update-pins, tad-update-pins and lpoco-host-follow (orchestration's edit). Proof: bump now on a fixture with a pin moved by another job leaves it, and lists it.
+: Decision 2026-11-23-every-pin-one-pushed-mover (1). moved_by on [[tool]] and [[slice]], default rhizoid-bump; bump lists every pin with pin.N.moved_by and skips the others under now. docs' graph then names idealkb-update-pins, tad-update-pins and lpoco-host-follow (orchestration's edit). Proof: bump now on a fixture with a pin moved by another job leaves it, and lists it. Done in rhizoid v0.3.4 (PR #39): moved_by on [[tool]] and [[slice]], never empty; bump lists pin.N.moved_by and under now moves only rhizoid-bump's pins, its exit counting only those.
 
 Opened
 : 2026-11-23
@@ -302,10 +302,10 @@ Rank
 ### bump now --land lands each bump through the follower's checks; a shipped user timer runs it hourly
 
 Status
-: open
+: done
 
 Note
-: Decision 2026-11-23-every-pin-one-pushed-mover (2). The graph's [bump] land argv (e.g. ["land"]) runs on each pushed bump branch; a failing gate or check leaves the PR and says why. packaging/systemd/rhizoid-bump.{service,timer} on idealkb-update-pins' pattern (token from the lab's private file). Orchestration enables it on the lab host. Proof: a fixture follower whose land stand-in passes gets the pin on main; one that fails keeps the branch and the PR, and the run names it.
+: Decision 2026-11-23-every-pin-one-pushed-mover (2). The graph's [bump] land argv (e.g. ["land"]) runs on each pushed bump branch; a failing gate or check leaves the PR and says why. packaging/systemd/rhizoid-bump.{service,timer} on idealkb-update-pins' pattern (token from the lab's private file). Orchestration enables it on the lab host. Proof: a fixture follower whose land stand-in passes gets the pin on main; one that fails keeps the branch and the PR, and the run names it. Done in rhizoid v0.3.6 (PR #43): --land runs [bump] land in the bump's worktree on its branch; a refused land keeps the PR (pin.N.land_error), and a later run says branch-exists - it waits for a hand. packaging/systemd/rhizoid-bump.{service,timer}: graph from origin/main of RHIZOID_GRAPH_CLONE (~/.config/rhizoid/bump.env). Enabling it on the lab host is orchestration's.
 
 Opened
 : 2026-11-23
@@ -334,13 +334,29 @@ Rank
 ### One pin, one place: status finds a second copy of a pin's tag name; bump refuses to move one copy of several
 
 Status
-: open
+: done
 
 Note
-: Decision 2026-11-23-every-pin-one-pushed-mover (5). google-walleye-lab #790: the attended pin was also in the procedures' headers and CI, so bump moved one of three. pin-copies: git grep of the follower's tracked files at origin/main for the tag name bump writes (tag_prefix + version + tag_suffix) outside the pin file and its also files; each hit is moved-by-hand with file:line. bump now refuses such a pin (pin.N.state=refused, copies named). Ranked before the timer, so a timer never lands a half-moved pin. Proof: a fixture follower with the tag in a second file - status names it and bump refuses; without it, bump moves the pin.
+: Decision 2026-11-23-every-pin-one-pushed-mover (5). google-walleye-lab #790: the attended pin was also in the procedures' headers and CI, so bump moved one of three. pin-copies: git grep of the follower's tracked files at origin/main for the tag name bump writes (tag_prefix + version + tag_suffix) outside the pin file and its also files; each hit is moved-by-hand with file:line. bump now refuses such a pin (pin.N.state=refused, copies named). Ranked before the timer, so a timer never lands a half-moved pin. Proof: a fixture follower with the tag in a second file - status names it and bump refuses; without it, bump moves the pin. Done in rhizoid v0.3.5 (PR #41): whole tag names only (v0.17.10 or v0.17.1-cut.2 is no copy); a tool with no tag prefix is not searched. On docs' graph it found the real copies (walleye's procedures and CI, surya's procedures/attended-session.rs) and records too - split off as pin-copies-skip-records.
 
 Opened
 : 2026-11-23
 
 Rank
 : 3
+
+
+<a id="pin-copies-skip-records"></a>
+### pin-copies skips the files a follower marks as records with a git attribute
+
+Status
+: in-progress
+
+Note
+: The rhizoid lane coordinator, 2026-11-23, checking v0.3.5 on docs' graph: pin-copies counted history that names a version as copies (docs' research/base-graph/2026-11-18/measured.md for tad-v0.7.1; walleye's data/backlog.json and its rendered docs/backlog.md) - not a second pin, and back after every bump, the busy work the condition rules out. A follower marks its record paths in its own .gitattributes (data/** rhizoid-records); pin-copies skips any file git check-attr marks: an existing git mechanism, declared where the files live, no list in rhizoid or the graph. Ranked before pin-table-coverage. Proof: a fixture where a copy in a marked file is skipped and an unmarked copy is still found.
+
+Opened
+: 2026-11-23
+
+Rank
+: 4
