@@ -628,3 +628,15 @@ Considered
 
 Rejected
 : A red unit only: nobody who owns the follower sees it.
+
+---
+
+
+<a id="2026-11-23-rhizoid-v0-3-11"></a>
+### rhizoid v0.3.11: a failed gate's whole output kept
+
+Entry date
+: 2026-11-23
+
+Done
+: v0.3.11 (PR #53, release PR #54), reviewed by the programmer subagent (a lone carriage return, a huge line and a small budget kept in bounds, the gate's argv capped); the asset checked by sha256.

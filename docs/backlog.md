@@ -386,3 +386,16 @@ Note
 
 Opened
 : 2026-11-23
+
+
+<a id="gate-output-whole"></a>
+### bump keeps a failed gate's whole output: all in the report, head and tail in the draft
+
+Status
+: done
+
+Note
+: The rhizoid lane coordinator, 2026-11-23: the 12:04 gate failure on the lab (lpoco-manifest in lab-tools, cargo test exit 101) did not reproduce (docs #815), and its cause is unknown because only the gate's last line survived. Done in rhizoid v0.3.11 (PR #53): pin.N.gate.output holds every line (the key repeated, in order; a carriage return keeps a line's last state); the draft's body holds all of it under 60 KB, else its head (a third) and tail (two thirds) and how many lines were left out between. Proof: a gate printing 20000 lines gives a body under GitHub's limit with head, tail and the omitted count, and a report with all 20000 lines.
+
+Opened
+: 2026-11-23
