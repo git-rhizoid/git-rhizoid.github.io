@@ -18,3 +18,4 @@
 {"id":"g-20261123-033506","at":"2026-11-23T03:35:06Z","by":"git-rhizoid-builder","kind":"docs","summary":"decisions table; the standard tools: drive git for worktree and rerere, not b4"}
 {"id":"g-20261123-033800","at":"2026-11-23T03:38:00Z","by":"git-rhizoid-builder","kind":"docs","summary":"rhizoid carries the structure's git flows: assemble and kernel status ranked first"}
 {"id":"g-20261123-035454","at":"2026-11-23T03:54:54Z","by":"git-rhizoid-builder","kind":"docs","summary":"assemble-from-list done: rhizoid assemble released in v0.1.1"}
+{"id":"g-20261123-042054","at":"2026-11-23T04:20:54Z","by":"git-rhizoid-builder","kind":"docs","summary":"rhizoid v0.2.0: integration status, assemble refinements, rhizoid stays general"}
