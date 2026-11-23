@@ -311,7 +311,7 @@ Opened
 : 2026-11-23
 
 Rank
-: 3
+: 4
 
 
 <a id="pin-table-coverage"></a>
@@ -327,4 +327,20 @@ Opened
 : 2026-11-23
 
 Rank
-: 4
+: 5
+
+
+<a id="pin-one-copy"></a>
+### One pin, one place: status finds a second copy of a pin's tag name; bump refuses to move one copy of several
+
+Status
+: open
+
+Note
+: Decision 2026-11-23-every-pin-one-pushed-mover (5). google-walleye-lab #790: the attended pin was also in the procedures' headers and CI, so bump moved one of three. pin-copies: git grep of the follower's tracked files at origin/main for the tag name bump writes (tag_prefix + version + tag_suffix) outside the pin file and its also files; each hit is moved-by-hand with file:line. bump now refuses such a pin (pin.N.state=refused, copies named). Ranked before the timer, so a timer never lands a half-moved pin. Proof: a fixture follower with the tag in a second file - status names it and bump refuses; without it, bump moves the pin.
+
+Opened
+: 2026-11-23
+
+Rank
+: 3
